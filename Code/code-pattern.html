@@ -1,0 +1,144 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Code Pattern</title>
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+    
+    
+    <link rel="stylesheet" href="/static/css/lib/normalize.css">
+    <link rel="stylesheet" href="/static/css/hl-styles/monokai-sublime.css">
+    <link rel="stylesheet" href="/static/css/article.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+  </head>
+
+
+  <body>
+
+    <div class="slide-tag  slide-tag-article ">
+  <div class="toggle-button">
+    <a href="javascript:;" class="slide-button"><i class="fa fa-bars" aria-hidden="true"></i></a>
+  </div>
+  
+  <ul>
+    
+    <li class="index" title="首页">
+      <a href="/" class="slide-button"><i class="fa fa-home" aria-hidden="true"></i></a><span>首页</span>
+    </li>
+    
+    <li title="所有文章">
+      <a href="/page/1/index.html" class="slide-button"><i class="fa fa-list-alt" aria-hidden="true"></i></a><span>所有文章</span>
+    </li>
+    <li title="目录">
+      <a href="/category/index.html" class="slide-button"><i class="fa fa-list-ol" aria-hidden="true"></i></a><span>目录</span>
+    </li>
+    
+      <li title="上一级">
+        <a href="./index.html" class="slide-button"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a><span>上一级</span>
+      </li>
+    
+    <li title="关于我">
+      <a href="http://cfw.io" class="slide-button"><i class="fa fa-user" aria-hidden="true"></i></a><span>关于我</span>
+    </li>
+  </ul>
+</div>
+
+
+    <div class="main">
+      
+      
+      <div class="article org">
+        <h1 class="title">Code Pattern</h1>
+        <span class="show-time">2016年3月19日 上午11:34</span>
+        <br/>
+        <br/>
+        <div class="hr"></div>
+        
+        <ul><li><a href="#header-1"><span class="section-number">1</span>&#x4EE3;&#x7801;&#x89C4;&#x8303;&#x5DF1;&#x89C1;</a></li>
+<li><a href="#header-2"><span class="section-number">2</span>&#x53D8;&#x91CF;</a><ul><li><a href="#header-2-1"><span class="section-number">2.1</span>&#x53D8;&#x91CF;&#x7684;&#x547D;&#x540D;</a></li>
+<li><a href="#header-2-2"><span class="section-number">2.2</span>&#x907F;&#x514D;&#x4F7F;&#x7528;&#x8FC7;&#x4E8E;&#x7B80;&#x5355;&#x7684;&#x547D;&#x540D;</a></li>
+<li><a href="#header-2-3"><span class="section-number">2.3</span>&#x6211;&#x8BA4;&#x4E3A;&#x53D8;&#x91CF;&#x5B9C;&#x957F;&#x4E0D;&#x5B9C;&#x77ED;</a></li>
+</ul>
+</li>
+<li><a href="#header-3"><span class="section-number">3</span>&#x64CD;&#x4F5C;&#x7B26;</a><ul><li><a href="#header-3-1"><span class="section-number">3.1</span>&#x56DB;&#x5219;&#x8FD0;&#x7B97;</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="header-1"><span class="section-number">1</span>&#x4EE3;&#x7801;&#x89C4;&#x8303;&#x5DF1;&#x89C1;</h2>
+<p>&#x76F8;&#x4FE1;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x6E05;&#x695A;&#x5F97;&#x8BA4;&#x8BC6;&#x5230;&#xFF0C;&#x9605;&#x8BFB;&#x4EE3;&#x7801;&#x662F;&#x4E00;&#x4EF6;&#x5F88;&#x70E7;&#x8111;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x56E2;&#x961F;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8FD8;&#x662F;&#x67D0;&#x79CD;&#x7B97;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x751A;&#x81F3;&#x662F;&#x77E5;&#x540D;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x770B;&#x8D77;&#x6765;&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x8BA9;&#x4EBA;&#x61F5;&#x903C;&#x3002;</p>
+<p>&#x5176;&#x5B9E; lisp &#x8FD9;&#x79CD;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x6BD4;&#x7C7B; c &#x7684;&#x6307;&#x4EE4;&#x5F0F;&#x8BED;&#x8A00;&#x597D;&#x8BFB;&#xFF0C;&#x56E0;&#x4E3A; lisp &#x7684;&#x4EE3;&#x7801;&#x867D;&#x7136;&#x65B0;&#x624B;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x96BE;&#x770B;&#x61C2;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x5B9E;&#x61C2;&#x8FD9;&#x95E8;&#x8BED;&#x8A00;&#x7684;&#x4EBA;&#x770B;&#x8D77;&#x6765;&#x4F1A;&#x975E;&#x5E38;&#x8212;&#x670D;&#xFF0C;&#x5B8C;&#x5168;&#x662F;&#x7B26;&#x5408;&#x601D;&#x7EF4;&#x7684;&#x8D70;&#x5411;&#x7684;&#xFF0C;&#x4EE3;&#x7801;&#x7684;&#x4E66;&#x5199;&#x5C31;&#x662F;&#x601D;&#x7EF4;&#x7684;&#x5C55;&#x73B0;&#xFF0C;&#x76F8;&#x65B9;&#xFF0C;&#x7C7B; c &#x7684;&#x4EE3;&#x7801;&#x6216;&#x591A;&#x6216;&#x5C11;&#x4F1A;&#x8FCE;&#x5408;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x601D;&#x7EF4;&#xFF0C;&#x5F88;&#x591A;&#x4EE3;&#x7801;&#x90FD;&#x6545;&#x610F;&#x6216;&#x8005;&#x4E0D;&#x662F;&#x6545;&#x610F;&#x4F7F;&#x7528;&#x5F88;&#x591A;&#x5947;&#x6DEB;&#x5DE7;&#x6280;&#xFF0C;&#x8BED;&#x8A00;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x903C;&#x662F;&#x88C5;&#x8DB3;&#x4E86;&#xFF0C;&#x6027;&#x80FD;&#x5E76;&#x6CA1;&#x6709;&#x63D0;&#x5347;&#xFF0C;&#x5374;&#x9020;&#x6210;&#x975E;&#x5E38;&#x4E25;&#x91CD;&#x4EE3;&#x7801;&#x9605;&#x8BFB;&#x969C;&#x788D;&#xFF0C;&#x751A;&#x81F3;&#x662F;&#xFF0C;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x51E0;&#x4E2A;&#x6708;&#x56DE;&#x5934;&#x4E00;&#x770B;&#xFF0C;&#x7ADF;&#x7136;&#x60F3;&#x4E0D;&#x8D77;&#x8FD9;&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x5E94;&#x8BE5;&#x53D7;&#x5230;&#x6452;&#x5F03;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x8FD9;&#x662F;&#x6C34;&#x5E73;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x627F;&#x8BA4;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x89C9;&#x5F97;&#x5199;&#x51FA;&#x6613;&#x8BFB;&#x7F8E;&#x89C2;&#x7684;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x51C6;&#x5219;&#x3002;&#x8FD9;&#x4E2A;&#x4ED3;&#x5E93;&#x8BB0;&#x5F55;&#x7740;&#x6211;&#x4E00;&#x4E9B;&#x5BF9;&#x4EE3;&#x7801;&#x89C4;&#x8303;&#x7684;&#x89C1;&#x89E3;&#xFF0C;&#x5E0C;&#x671B;&#x80FD;&#x5F15;&#x8D77;&#x8BA8;&#x8BBA;&#xFF0C;&#x63D0;&#x51FA; issue &#x5927;&#x5BB6;&#x4E92;&#x76F8;&#x5B66;&#x4E60;&#x3002;</p>
+<p>&#x962E;&#x4E00;&#x5CF0;&#x4E5F;&#x8868;&#x8FBE;&#x51FA;&#x76F8;&#x8FD1;&#x7684;&#x89C2;&#x70B9;
+<a href="http://www.ruanyifeng.com/blog/2010/01/12_javascript_syntax_structures_you_should_not_use.html">http://www.ruanyifeng.com/blog/2010/01/12_javascript_syntax_structures_you_should_not_use.html</a></p>
+<h2 id="header-2"><span class="section-number">2</span>&#x53D8;&#x91CF;</h2>
+<h3 id="header-2-1"><span class="section-number">2.1</span>&#x53D8;&#x91CF;&#x7684;&#x547D;&#x540D;</h3>
+&#x6BCF;&#x4E2A;&#x4EBA;&#x7A0B;&#x5E8F;&#x5458;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x903B;&#x8F91;&#xFF0C;&#x5B8C;&#x6210;&#x4E00;&#x6BB5;&#x7A0B;&#x5E8F;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EBA;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x903B;&#x8F91;&#xFF0C;&#x53D8;&#x91CF;&#x662F;&#x627F;&#x8F7D;&#x601D;&#x7EF4;&#x7684;&#x4E3B;&#x8981;&#x8F7D;&#x4F53;&#xFF0C;&#x5982;&#x679C;&#x53D8;&#x91CF;&#x540D;&#x53D6;&#x5F97;&#x8FC7;&#x4E8E;&#x7B80;&#x5355;&#xFF0C;&#x6216;&#x8005;&#x7528;&#x4E00;&#x4E9B;&#x522B;&#x4EBA;&#x770B;&#x4E0D;&#x61C2;&#x7684;&#x547D;&#x540D;&#xFF0C;&#x4F1A;&#x8BA9;&#x9605;&#x8BFB;&#x4F60;&#x4EE3;&#x7801;&#x7684;&#x4EBA;&#x975E;&#x5E38;&#x75DB;&#x82E6;&#x548C;&#x4E0D;&#x89E3;&#x3002;<h3 id="header-2-2"><span class="section-number">2.2</span>&#x907F;&#x514D;&#x4F7F;&#x7528;&#x8FC7;&#x4E8E;&#x7B80;&#x5355;&#x7684;&#x547D;&#x540D;</h3>
+&#x6709;&#x4E9B;&#x4EBA;&#x559C;&#x6B22;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5728;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x903B;&#x8F91;&#x4E0A;&#x4E00;&#x70B9;&#x95EE;&#x9898;&#x90FD;&#x6CA1;&#x6709;&#xFF0C;&#x4EBA;&#x4E00;&#x770B;&#x5C31;&#x61C2;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8BBE;&#x8BA1;&#x5230;&#x7B97;&#x6CD5;&#x548C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7684;&#x7A0B;&#x5E8F;&#x4E0A;&#xFF0C;&#x8FC7;&#x4E8E;&#x7B80;&#x5355;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x76F4;&#x63A5;&#x8BA9;&#x4EBA;&#x61F5;&#x903C;&#x4E86;&#xFF0C;&#x8BA9;&#x4EBA;&#x770B;&#x5F97;&#x4E0D;&#x77E5;&#x6240;&#x4E91;&#xFF0C;&#x5728;&#x9605;&#x8BFB;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#x8981;&#x4F7F;&#x52B2;&#x60F3;&#x7740;&#x8FD9;&#x4E2A; m &#x662F; map&#xFF0C;&#x8FD9;&#x4E2A; a &#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x8FD9;&#x4E2A; k &#x662F;&#x67D0;&#x4E2A; index&#xFF0C;&#x5341;&#x5206;&#x4E0D;&#x4FBF;&#x4E8E;&#x9605;&#x8BFB;&#x3002;&#x5F53;&#x7136;&#xFF0C;i&#xFF0C;j &#x7528;&#x4E8E;&#x5FAA;&#x73AF;&#xFF0C;n &#x4EE3;&#x8868;&#x957F;&#x5EA6;&#x7B49;&#x7B49;&#x8FD9;&#x4E9B;&#x4E16;&#x754C;&#x901A;&#x7528;&#x7684;&#x5C31;&#x4E0D;&#x5FC5;&#x4E86;&#x3002;<h3 id="header-2-3"><span class="section-number">2.3</span>&#x6211;&#x8BA4;&#x4E3A;&#x53D8;&#x91CF;&#x5B9C;&#x957F;&#x4E0D;&#x5B9C;&#x77ED;</h3>
+&#x53D8;&#x91CF;&#x5B9C;&#x957F;&#x4E0D;&#x5B9C;&#x77ED;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x7F16;&#x8BD1;&#x6027;&#x8BED;&#x8A00;&#xFF0C;&#x53D8;&#x91CF;&#x5199;&#x957F;&#x4E86;&#x53EF;&#x4EE5;&#x8BA9;&#x610F;&#x601D;&#x66F4;&#x660E;&#x767D;&#xFF0C;&#x5373;&#x4F7F;&#x662F;&#x62D9;&#x8BA1;&#x7684;&#x82F1;&#x8BED;&#xFF0C;&#x4E5F;&#x6BD4;&#x77ED;&#x53D8;&#x91CF;&#x8981;&#x597D;&#xFF0C;&#x4E0D;&#x4F1A;&#x8BA9;&#x4F60;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x540D;&#xFF0C;&#x4EE4;&#x4F60;&#x8BEF;&#x89E3;&#xFF0C;&#x7136;&#x540E;&#x770B;&#x4EE3;&#x7801;&#x7684;&#x601D;&#x7EF4;&#x8D70;&#x4E0B;&#x53BB;&#xFF0C;&#x54CE;&#x554A;&#x53D1;&#x73B0;&#xFF0C;&#x539F;&#x6765;&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x5E76;&#x4E0D;&#x662F;&#x6211;&#x60F3;&#x7684;&#x90A3;&#x4E2A;&#x610F;&#x601D;&#x3002;&#x4E0B;&#x9762;&#x4E3E;&#x4F8B;&#x4E00;&#x5219;&#xFF1A;<h2 id="header-3"><span class="section-number">3</span>&#x64CD;&#x4F5C;&#x7B26;</h2>
+<h3 id="header-3-1"><span class="section-number">3.1</span>&#x56DB;&#x5219;&#x8FD0;&#x7B97;</h3>
+&#x5199;&#x4EE3;&#x7801;&#x4E0D;&#x662F;&#x5728;&#x5199;&#x6570;&#x5B66;&#xFF0C;-i + j &#x8FD9;&#x79CD;&#x4EE3;&#x7801;&#x4E0D;&#x8981;&#x5199;&#x6210; j + i&#xFF0C;&#x4E0D;&#x7136;&#x4F1A;&#x4F7F;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x770B;&#x8D77;&#x6765;&#x975E;&#x5E38;&#x6DF7;&#x4E71;&#x96BE;&#x8BFB;
+
+        
+      </div>
+      
+      <div class="footer-avator">
+
+    <div class="hr"></div>
+    
+    <img alt="" src="/static/img/me.jpg"/>
+
+    <p class="footer-avator--author">陳放為</p>
+    <p class="footer-avator--author-desc">一个码农 </p>
+    
+</div>
+
+      
+      <footer class="footer-article">
+
+    <div class="hr"></div>
+    
+    <div class="footer-text">
+        <p>陳放為的博客 All rights reserved.</p>
+        <ul class="footer-icons">
+            
+            <li>
+                <a href="https://github.com/AbyChan/" target="_blank">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M512 0c-282.75 0-512 229.25-512 512 0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312-142.375 30.937-172.469-60.375-172.469-60.375-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375-113.656-12.937-233.218-56.875-233.218-253.063 0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562 203.313-67.812 349.875-259.687 349.875-485.812 0-282.75-229.25-512-512-512z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM256 256h512c9.138 0 18.004 1.962 26.144 5.662l-282.144 329.168-282.144-329.17c8.14-3.696 17.006-5.66 26.144-5.66zM192 704v-384c0-1.34 0.056-2.672 0.14-4l187.664 218.942-185.598 185.598c-1.444-5.336-2.206-10.886-2.206-16.54zM768 768h-512c-5.654 0-11.202-0.762-16.54-2.208l182.118-182.118 90.422 105.498 90.424-105.494 182.116 182.12c-5.34 1.44-10.886 2.202-16.54 2.202zM832 704c0 5.654-0.762 11.2-2.206 16.54l-185.6-185.598 187.666-218.942c0.084 1.328 0.14 2.66 0.14 4v384z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path class="path1" d="M928 0h-832c-52.8 0-96 43.2-96 96v832c0 52.8 43.2 96 96 96h832c52.8 0 96-43.2 96-96v-832c0-52.8-43.2-96-96-96zM279 831.2c-48 0-87-38.6-87-86.6 0-47.6 39-86.8 87-86.8 48.2 0 87 39.2 87 86.8 0 48-39 86.6-87 86.6zM497.4 832c0-81.8-31.8-158.8-89.4-216.4-57.8-57.8-134.4-89.6-216-89.6v-125.2c237.6 0 431.2 193.4 431.2 431.2h-125.8zM719.6 832c0-291-236.6-528-527.4-528v-125.2c360 0 653 293.2 653 653.2h-125.6z"></path>
+                    </svg>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</footer>
+
+    </div>
+    
+
+
+    <script src="/static/js/article.bundle.js"></script>
+    <script src="/static/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

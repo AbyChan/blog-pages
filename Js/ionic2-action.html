@@ -1,0 +1,847 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Ionic2 + Angular2 实战</title>
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+    
+    
+    <link rel="stylesheet" href="/static/css/lib/normalize.css">
+    <link rel="stylesheet" href="/static/css/hl-styles/monokai-sublime.css">
+    <link rel="stylesheet" href="/static/css/article.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+  </head>
+
+
+  <body>
+
+    <div class="slide-tag  slide-tag-article ">
+  <div class="toggle-button">
+    <a href="javascript:;" class="slide-button"><i class="fa fa-bars" aria-hidden="true"></i></a>
+  </div>
+  
+  <ul>
+    
+    <li class="index" title="首页">
+      <a href="/" class="slide-button"><i class="fa fa-home" aria-hidden="true"></i></a><span>首页</span>
+    </li>
+    
+    <li title="所有文章">
+      <a href="/page/1/index.html" class="slide-button"><i class="fa fa-list-alt" aria-hidden="true"></i></a><span>所有文章</span>
+    </li>
+    <li title="目录">
+      <a href="/category/index.html" class="slide-button"><i class="fa fa-list-ol" aria-hidden="true"></i></a><span>目录</span>
+    </li>
+    
+      <li title="上一级">
+        <a href="./index.html" class="slide-button"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a><span>上一级</span>
+      </li>
+    
+    <li title="关于我">
+      <a href="http://cfw.io" class="slide-button"><i class="fa fa-user" aria-hidden="true"></i></a><span>关于我</span>
+    </li>
+  </ul>
+</div>
+
+
+    <div class="main">
+      
+      
+      <div class="article org">
+        <h1 class="title">Ionic2 + Angular2 实战</h1>
+        <span class="show-time">2016年3月14日 下午1:18</span>
+        <br/>
+        <br/>
+        <div class="hr"></div>
+        
+        <ul><li><a href="#header-"><span class="section-number"></span></a><ul><li><a href="#header-0-1"><span class="section-number">0.1</span>angular 2</a><ul><li><a href="#header-0-1-1"><span class="section-number">0.1.1</span>&#x66F4;&#x6613;&#x4E8E;&#x63A8;&#x8BBA;</a></li>
+<li><a href="#header-0-1-2"><span class="section-number">0.1.2</span>Zones</a></li>
+<li><a href="#header-0-1-3"><span class="section-number">0.1.3</span>Web Component </a></li>
+<li><a href="#header-0-1-4"><span class="section-number">0.1.4</span>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</a></li>
+</ul>
+</li>
+<li><a href="#header-0-2"><span class="section-number">0.2</span>Hacker News</a><ul><li><a href="#header-0-2-1"><span class="section-number">0.2.1</span>Index Page</a></li>
+<li><a href="#header-0-2-2"><span class="section-number">0.2.2</span>&#x89C6;&#x56FE;</a></li>
+<li><a href="#header-0-2-3"><span class="section-number">0.2.3</span>component</a></li>
+<li><a href="#header-0-2-4"><span class="section-number">0.2.4</span>&#x6536;&#x85CF;&#x9875;&#x9762;</a></li>
+<li><a href="#header-0-2-5"><span class="section-number">0.2.5</span>&#x6307;&#x4EE4;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Angular2 &#x51FA;&#x6765;&#x5DF2;&#x7ECF;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x4E86;&#xFF0C;&#x73B0;&#x5728;&#x505A;&#x7684;&#x4E00;&#x4E2A;&#x516C;&#x53F8;&#x9879;&#x76EE;&#x662F;&#x7528; Ionic1&#xFF0C;&#x5475;&#x5475;&#xFF0C;&#x5176;&#x5B9E;&#x8FD8;&#x662F;&#x86EE;&#x5751;&#x7684;&#xFF0C;&#x6240;&#x4EE5; Angular2 &#x4E00;&#x5230; beta &#x9636;&#x6BB5;&#xFF0C;&#x6211;&#x5C31;&#x60F3;&#x8DC3;&#x8DC3;&#x6B32;&#x8BD5;&#xFF0C;&#x6240;&#x4EE5;&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x5C0F;&#x9879;&#x76EE;&#x7EC3;&#x7EC3;&#x624B;&#x3002;</p>
+<p>&#x505A;&#x4E86;&#x4E00;&#x4E2A; hacker news &#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x3002;</p>
+<p>Hacker News&#x662F;Y Combinator&#x65D7;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x65B0;&#x95FB;&#x9891;&#x9053;&#xFF0C;&#x5C5E;&#x4E8E;digg&#x7C7B;&#x4EA7;&#x54C1;&#xFF0C;&#x633A;&#x53D7;&#x6B22;&#x8FCE;&#x7684;&#xFF0C;&#x6211;&#x5076;&#x5C14;&#x90FD;&#x4F1A;&#x4E0A;&#x53BB;&#x770B;&#x770B;&#x6709;&#x4EC0;&#x4E48;&#x65B0;&#x95FB;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x4E0E;&#x6280;&#x672F;&#x6709;&#x5173;&#x7684;&#x90FD;&#x4F1A;&#x6D89;&#x53CA;&#x5230;&#x3002;</p>
+<p>&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x4EE3;&#x7801;&#x653E;&#x5728;&#x8FD9;&#x91CC;&#x3002; </p>
+<p><a href="https://github.com/A-Horse/hack-newer"><a href="https://github.com/A-Horse/hack-newer">https://github.com/A-Horse/hack-newer</a></a></p>
+<p>&#x4F7F;&#x7528; ionic2 &#x4E0D;&#x7528;&#x5173;&#x5FC3; angular2 &#x7684;&#x4EC0;&#x4E48;&#x914D;&#x7F6E;&#xFF0C;&#x90E8;&#x7F72;&#xFF0C;ionic2 &#x90FD;&#x5E2E;&#x4F60;&#x628A;&#x8FD9;&#x4E9B;&#x7410;&#x4E8B;&#x505A;&#x597D;&#x4E86;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x4E86;&#x89E3; angular2 &#x7684;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#xFF0C;&#x6211;&#x4E4B;&#x524D;&#x4E5F;&#x7814;&#x7A76;&#x8FC7; react native&#xFF0C; typescript &#x5C31;&#x6211;&#x4E0D;&#x7528;&#x5B66;&#x4E86;&#xFF0C;&#x5F88;&#x5FEB;&#x4E0A;&#x624B; (&#x9488;&#x5BF9;&#x5BF9; angular1 &#x719F;&#x6089;&#x7684;&#x540C;&#x5B66;&#x6765;&#x8BB2;&#xFF0C;&#x81F3;&#x4E8E;&#x4E4B;&#x524D;&#x6CA1;&#x6709;&#x7528;&#x8FC7; angular1&#xFF0C;&#x5EFA;&#x8BAE;&#x8FD8;&#x662F;&#x6DF1;&#x5165;&#x4E86;&#x89E3;&#x4E00;&#x4E0B; angular &#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#x3002;)</p>
+<h3 id="header-0-1"><span class="section-number">0.1</span>angular 2</h3>
+&#x4E0B;&#x9762;&#x6765;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B; angular2 &#x7684;&#x4E00;&#x4E9B;&#x6211;&#x89C9;&#x5F97;&#x6BD4;&#x8F83;&#x7279;&#x522B;&#x7684;&#x7279;&#x70B9;&#x3002;<h4 id="header-0-1-1"><span class="section-number">0.1.1</span>&#x66F4;&#x6613;&#x4E8E;&#x63A8;&#x8BBA;</h4>
+&#x5728;&#x5F53;&#x524D;&#x7248;&#x672C;&#x7684; Angular &#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x65F6;&#x4E0D;&#x5F97;&#x5DF2;&#x5BF9;&#x5E94;&#x7279;&#x5B9A;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x63A8;&#x8BBA;&#x6846;&#x67B6;&#x5185;&#x90E8;&#x6784;&#x5EFA;&#xFF0C;&#x6BD4;&#x5982;&#x5FC5;&#x987B;&#x63A8;&#x8BBA;&#x5E94;&#x7528;&#x4E8B;&#x4EF6;&#x521D;&#x59CB;&#x5316;&#x548C;&#x6458;&#x8981;&#x5FAA;&#x73AF;&#xFF1A;&#x5728; Angular 1 &#x4E2D;&#x6CA1;&#x6709;&#x6458;&#x8981;&#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x4E8B;&#x4EF6; (&#x67E5;&#x770B;&#x539F;&#x56E0;)&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x79CD;&#x4E8B;&#x4EF6;&#x53EF;&#x80FD;&#x4F1A;&#x4FC3;&#x53D1;&#x66F4;&#x591A;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x4EE5;&#x81F3;&#x4E8E;&#x4F7F;&#x6458;&#x8981;&#x5FAA;&#x73AF;&#x6301;&#x7EED;&#x4E0B;&#x53BB;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x63A8;&#x8BBA;&#x4F55;&#x65F6;&#x8C03;&#x7528; $scope.apply &#x6216; $cope.digest&#xFF0C;&#x800C;&#x8FD9;&#x5E76;&#x4E0D;&#x603B;&#x662F;&#x5BB9;&#x6613;&#x7684;&#x6709;&#x65F6;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x8C03;&#x7528; $timeoutto&#x8BA9;Angular &#x7ED3;&#x675F;&#x6458;&#x8981;&#x5FAA;&#x73AF;&#xFF0C;&#x5F53; DOM &#x7A33;&#x5B9A;&#x65F6;&#x518D;&#x505A;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x4E3A;&#x4E86;&#x4F7F; Angular 2 &#x66F4;&#x6613;&#x4E8E;&#x63A8;&#x8BBA;&#xFF0C;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x662F;&#x521B;&#x5EFA;&#x66F4;&#x591A;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x7684;&#x900F;&#x660E;&#x5185;&#x90E8;&#x6784;&#x5EFA;&#x3002;&#x5F00;&#x59CB;&#x4E4B;&#x524D;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B; Angular 1 &#x7684;&#x7ED1;&#x5B9A;&#x673A;&#x5236;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x5982;&#x4F55;&#x4F7F;&#x5B83;&#x66F4;&#x900F;&#x660E;&#x3002;<p><i>&#x5BF9;&#x4E0E; angular1 &#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x6700;&#x81F4;&#x547D;&#x7684;&#xFF0C;&#x5F00;&#x53D1;&#x8FC7; angular1 &#x7684;&#x4EBA;&#x90FD;&#x4F1A;&#x4E86;&#x89E3;&#x5230;&#xFF0C;&#x5F53;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x7EA2;&#x8272;&#x7684;&#x62A5;&#x9519;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x7F3A;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x4ECE;&#x63A7;&#x5236;&#x53F0;&#x5B9A;&#x4F4D;&#x5230;&#x54EA;&#x91CC;&#x9519;&#xFF0C;&#x662F;&#x591A;&#x4E48;&#x7684;&#x75DB;&#x82E6;&#xFF0C;&#x8FD9;&#x5C31;&#x662F; angular1 &#x5FAA;&#x73AF;&#x4E8B;&#x4EF6;&#x6076;&#x5FC3;&#x4E4B;&#x5904;</i></p>
+<h4 id="header-0-1-2"><span class="section-number">0.1.2</span>Zones</h4>
+angular 1&#x4E00;&#x76F4;&#x540C;&#x7B80;&#x5355; Javascript &#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x540C;&#x6B65;&#xFF0C;&#x5C3D;&#x7BA1;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4F7F;&#x5F97;&#x6709;&#x65F6;&#x96BE;&#x4EE5;&#x8FDB;&#x884C;&#x63A8;&#x8BBA;&#xFF1A;<ul><li>&#x4E0D;&#x6E05;&#x695A;&#x54EA;&#x4E9B;&#x76D1;&#x89C6;&#x5668;&#x4F1A;&#x8FD0;&#x884C;&#xFF0C;&#x4EC0;&#x4E48;&#x987A;&#x5E8F;&#xFF0C;&#x591A;&#x5C11;&#x6B21;</li>
+<li>&#x6A21;&#x578B;&#x66F4;&#x65B0;&#x987A;&#x5E8F;&#x96BE;&#x4EE5;&#x63A8;&#x8BBA;&#x548C;&#x9884;&#x671F;</li>
+<li>&#x6458;&#x8981;&#x5FAA;&#x73AF;&#x591A;&#x6B21;&#x8FD0;&#x884C;&#x5BFC;&#x81F4;&#x65F6;&#x95F4;&#x6D88;&#x8017;</li>
+</ul>
+Angular &#x56E2;&#x961F;&#x5236;&#x5B9A; Angular 2 &#x5F00;&#x53D1;&#x65B9;&#x5411;&#x65F6;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x70B9;&#x662F;&#x63D0;&#x53D6; Angular &#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x5F02;&#x6B65;&#x4EA4;&#x4E92;&#x70B9;&#x8865;&#x4E01;&#x673A;&#x5236;&#xFF0C;&#x4EE5;&#x4FBF;&#x53EF;&#x4EE5;&#x91CD;&#x7528;&#x5B83;&#x3002;<p>&#x8FD9;&#x4E9B;&#x91CD;&#x6784;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F; Zone.js&#xFF0C;&#x5B83;&#x7C7B;&#x4F3C;&#x4E8E; Java &#x4E2D;&#x7684; thread-local &#x4E0A;&#x4E0B;&#x6587;&#x3002;
+&#x4ED6;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5F88;&#x591A;&#x573A;&#x666F;&#xFF0C;&#x6BD4;&#x5982;&#x53EF;&#x4EE5;&#x5141;&#x8BB8;&#x6846;&#x67B6;&#x751F;&#x6210;&#x66F4;&#x957F;&#x7684;&#x8DE8;&#x8D8A;&#x591A;&#x4E2A; JavaScript VM &#x7684;&#x5806;&#x6808;&#x8DDF;&#x8E2A;&#x4FE1;&#x606F;&#x3002;</p>
+<p>Angular 2 &#x4F7F;&#x7528; zones &#x673A;&#x5236;&#x4F7F;&#x6458;&#x8981;&#x5FAA;&#x73AF;&#x4E0D;&#x518D;&#x88AB;&#x9700;&#x8981;&#x3002;&#x7B80;&#x5355;&#x7684;&#x975E; Angular &#x6307;&#x5B9A;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x900F;&#x660E;&#x5730;&#x6FC0;&#x53D1;&#x4E00;&#x4E2A;Angular 2 &#x6458;&#x8981;&#xFF0C;&#x5982;&#x4E0B;&#x662F;&#x7531;&#x4E00;&#x4E2A; zone &#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x6FC0;&#x53D1;&#x7684;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre class="prettyprint"><code class="language-javascript">element.addEventListener(&apos;keyup&apos;, function () {  
+  console.log(&apos;Key pressed.&apos;);
+});
+});</code>
+</pre>
+&#x4E0D;&#x518D;&#x9700;&#x8981; $scope.apply &#x6216; $scope.digest&#xFF0C;&#x6BCF;&#x6837;&#x4E1C;&#x897F;&#x90FD;&#x900F;&#x660E;&#x5730;&#x5DE5;&#x4F5C;&#x3002;&#x6216;&#x8BB8;&#x6211;&#x4EEC;&#x4E0D;&#x5FC5;&#x63A8;&#x8BBA;&#x51FA; zones &#x9002;&#x7528;&#x4E8E;&#x5927;&#x591A;&#x6570;&#x4E00;&#x822C;&#x573A;&#x666F;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528; VmTurnZone &#x5728; Angular zone &#x5916;&#x8FD0;&#x884C;&#x4EE3;&#x7801;&#x3002;<h4 id="header-0-1-3"><span class="section-number">0.1.3</span>Web Component </h4>
+Web Components &#x662F; web &#x7684;&#x672A;&#x6765;&#xFF0C;Angular 2 &#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x6253;&#x7B97;&#x8DDF;&#x672A;&#x6765;&#x7684;&#x7684; web component &#x5E93;&#x826F;&#x597D;&#x534F;&#x4F5C;&#x3002; &#x4E3A;&#x6B64;&#xFF0C;Angular 2 &#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x7684;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x5C31;&#x662F;&#x4FDD;&#x6301;&#x7279;&#x6027;&#x5B9A;&#x4E49;&#x7B80;&#x6D01;&#xFF0C;&#x4E0D;&#x5C06;&#x4EFB;&#x4F55; Angular &#x8868;&#x8FBE;&#x5F0F;&#x7F6E;&#x4E8E;&#x5176;&#x4E2D; &#x2014;&#x2014; &#x4E00;&#x5207;&#x90FD;&#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x7ED1;&#x5B9A;&#x3002;&#x4E3A;&#x4E86;&#x7406;&#x89E3;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x6765;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;<pre class="prettyprint"><code class="language-javascript">&lt;ng1-component&gt;
+     &lt;web-component-widget setting=&quot;{{angularExpresssion}}&quot;&gt;&lt;/web-component-widget&gt; 
+&lt;/ng1-component&gt;</code>
+</pre>
+<h4 id="header-0-1-4"><span class="section-number">0.1.4</span>&#x4F9D;&#x8D56;&#x6CE8;&#x5165;</h4>
+&#x611F;&#x89C9; angular2 &#x7684;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x662F;&#x5B66; java &#x7684;spring&#x7684;&#xFF0C;DI &#x5728; java &#x91CC;&#x9762;&#x8FD8;&#x662F;&#x633A;&#x597D;&#x7528;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x642C;&#x5230; Javascript &#x91CC;&#x9762;&#x6709;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x6211;&#x662F;&#x4FDD;&#x7559;&#x610F;&#x89C1;&#x7684;&#x3002;angular2 &#x7684;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;   \\<a href="http://gabriel0402.github.io/2015/12/25/angular-dependency-injection/">http://gabriel0402.github.io/2015/12/25/angular-dependency-injection/</a><h3 id="header-0-2"><span class="section-number">0.2</span>Hacker News</h3>
+<h4 id="header-0-2-1"><span class="section-number">0.2.1</span>Index Page</h4>
+<p>ionic &#x5C01;&#x88C5;&#x4E86;&#x4E00;&#x4E2A; component &#x53EB;&#x505A; page&#xFF0C; &#x4F7F;&#x7528;&#x88C5;&#x9970;&#x5668; @Page &#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#xFF0C;templateUrl &#x6307;&#x5B9A;&#x4E00;&#x4E2A; html template&#xFF0C; &#x662F;&#x7528; webpack &#x52A0;&#x8F7D;&#x7684;&#xFF0C;&#x5341;&#x5206;&#x65B9;&#x4FBF;&#xFF0C;&#x4E0D;&#x7528;&#x62C5;&#x5FC3;&#x518D;&#x6B21;&#x8BF7;&#x6C42;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
+<pre class="prettyprint"><code class="language-typescript">import {Page, Icon, NavController, Storage, LocalStorage, Hostlistener} from &apos;ionic&apos;;
+import {Http, HTTP_PROVIDERS} from &apos;angular2/http&apos;;
+import  * as _  from &apos;lodash&apos;;
+
+import {timeDifference} from &apos;../../util&apos;
+
+import {ButtonSequence} from &apos;../../components/buttonSequence/buttonSequence&apos;;
+import {WaveDirective} from &apos;../../Directives/wave/wave&apos;;
+//import {ChooseDirective} from &apos;../../Directives/choose/choose&apos;;
+
+import {StarPage} from &apos;../star/star&apos;;
+
+import &apos;rxjs/add/operator/map&apos;;
+
+import &apos;./index.scss&apos;;
+import &apos;./choose.scss&apos;;
+import &apos;./common.scss&apos;;
+
+const INIT_ITEM_N = 10;
+const fetchNewMins = 5;
+
+let fetchNewGap = 5 * 60 * 1000;
+
+const apis = {
+    &apos;new&apos;: &apos;<a href="https://hacker-news.firebaseio.com/v0/topstories.json&apos;">https://hacker-news.firebaseio.com/v0/topstories.json&apos;</a>;,
+    top: &apos;<a href="https://hacker-news.firebaseio.com/v0/newstories.json&apos;">https://hacker-news.firebaseio.com/v0/newstories.json&apos;</a>;,
+    ask: &apos;<a href="https://hacker-news.firebaseio.com/v0/askstories.json&apos;">https://hacker-news.firebaseio.com/v0/askstories.json&apos;</a>;,
+    show: &apos;<a href="https://hacker-news.firebaseio.com/v0/showstories.json&apos;">https://hacker-news.firebaseio.com/v0/showstories.json&apos;</a>;,
+    job: &apos;<a href="https://hacker-news.firebaseio.com/v0/jobstories.json&apos;">https://hacker-news.firebaseio.com/v0/jobstories.json&apos;</a>;
+}
+
+@Page({
+    templateUrl: &apos;build/pages/index/index.html&apos;,
+    directives: [Icon, ButtonSequence, WaveDirective]
+})
+export class IndexPage {
+    constructor(nav: NavController, http: Http) {
+        this.nav = nav;
+        this.http = http;
+
+        this.opItem = null;
+
+        this.bsClicked = false;
+
+        this.local = new Storage(LocalStorage);
+
+        this.category = this.local.get(&apos;category&apos;)._result || &apos;new&apos;;
+        this.items = [];
+
+        this.renderItemList(this.category);
+
+        this.vButtons = [{
+            icon: &apos;md-barcode&apos;,
+            txt: &apos;new&apos;
+        }, {
+            icon: &apos;md-analytics&apos;,
+            txt: &apos;top&apos;
+        }, {
+            icon: &apos;md-bulb&apos;,
+            txt: &apos;ask&apos;
+        }, {
+            icon: &apos;logo-linkedin&apos;,
+            txt: &apos;job&apos;
+        }, {
+            icon: &apos;md-easel&apos;,
+            txt: &apos;show&apos;
+        }];
+
+        this.vButtons.map((button) =&gt; {
+            button.fn = () =&gt; {
+                this.setCategory(button.txt);
+            };
+        });
+
+        this.hButtons = [{
+            icon: &apos;moon&apos;,
+            txt: &apos;moon&apos;,
+            fn:  (event) =&gt; {
+                if (this.hButtons[0].icon === &apos;moon&apos;) {
+                    this.hButtons[0].icon = &apos;md-sunny&apos;;
+                    this.hButtons[0].txt = &apos;sun&apos;;
+                } else {
+                    this.hButtons[0].icon = &apos;moon&apos;;
+                    this.hButtons[0].txt = &apos;moon&apos;;
+                }
+            }
+        }]
+    }
+
+    /*
+     *
+     * Event
+     *
+     */
+    doRefresh(refresher) {
+        this.fetchItemsList(this.category, () =&gt; { refresher.complete(); });
+    }
+
+    contentClick($event, bs) {
+        $event.preventDefault();
+        $event.stopPropagation();
+            if (this.bsClicked) {
+                bs.toggle($event);
+            }
+    }
+
+    openUrl($event, url) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        window.open(url, &apos;_blank&apos;, &apos;location=yes&apos;);
+    }
+
+    starItem($event, id) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        let starList = JSON.parse(this.local.get(&apos;star_list&apos;)._result) || [];
+
+        starList.push(JSON.stringify({
+            date: new Date(),
+            itemId: id
+        }));
+        this.local.set(&apos;star_list&apos;, JSON.stringify(starList));
+    }
+
+    closeChoose(clicked) {
+        if(!clicked)  {
+            return;
+        }
+        let lastItem = this.opItem;
+        if (!!lastItem || lastItem === 0) {
+            this.items[lastItem].chooseMove = false;
+
+            setTimeout(() =&gt; {
+                this.items[lastItem].opChoose = false;
+            }, 100);
+        }
+    }
+
+    cardClick(item, i) {
+        let lastItem = this.opItem;
+        this.opItem = i;
+
+        if ((!!lastItem || lastItem === 0) &amp;&amp; lastItem !== i) {
+            this.items[lastItem].chooseMove = false;
+
+            setTimeout(() =&gt; {
+                this.items[lastItem].opChoose = false;
+            }, 100);
+        }
+
+        if (item.opChoose) {
+            item.chooseMove = false;
+
+            setTimeout(() =&gt; {
+                item.opChoose = false;
+            }, 100);
+        } else {
+            console.log(&apos;not&apos;)
+            item.opChoose = true;
+
+            setTimeout(() =&gt; {
+                item.chooseMove = true;
+            }, 100);
+        }
+    }
+
+    goStar($event, bs) {
+        if (this.bsClicked) {
+                bs.toggle($event);
+        }
+        this.nav.push(StarPage);
+    }
+
+    /*
+     *
+     * Func
+     *
+     */
+
+    calcTimeDistance(time) {
+        return timeDifference(new Date().getTime(), time * 1000);
+    }
+
+    /*
+     *
+     * LocalStorge
+     *
+     */
+
+    setCategory(cate) {
+        console.log(cate);p
+        this.category = cate;
+        this.local.set(&apos;category&apos;, cate);
+    }
+
+    setCateList(cate, list) {
+        this.local.set(&apos;list_&apos; + cate, list);
+    }
+
+    getItem(id) {
+        return this.local.get(&apos;id_&apos; + id)._result;
+    }
+
+    setItem(id, data) {
+        this.local.set(&apos;id_&apos; + id, data);
+    }
+
+    /*
+     *
+     * Network
+     *
+     */
+
+    fetchItemsList(cate, cb) {
+
+        this.http.get(apis[cate])
+        .map(res =&gt; res.json())
+        .subscribe(
+            data =&gt; {
+                this.setCateList(cate, JSON.stringify(data));
+                this.handleItemList(data, cate);
+                cb &amp;&amp; cb();
+            },
+            err =&gt; this.logError(err)
+        );
+    }
+
+    refresh() {
+
+    }
+
+    renderItemList(cate) {
+        let list = JSON.parse(this.local.get(&apos;list_&apos; + cate)._result);
+
+        if (!list) {
+            console.log(&apos;fetch&apos;)
+            this.fetchItemsList(cate);
+        } else {
+            console.log(list);
+            this.handleItemList(list);
+        }
+    }
+
+    handleItemList(data) {
+        _.take(data, INIT_ITEM_N).map((itemId) =&gt; {
+            this.handleItem(itemId);
+        })
+    }
+
+    handleItem(id) {
+        let lItem = this.getItem(id);
+
+        if (lItem) {
+            this.items.push(JSON.parse(lItem));
+        } else {
+            this.http.get(`<a href="https://hacker-news.firebaseio.com/v0/item/${id}.json">https://hacker-news.firebaseio.com/v0/item/${id}.json</a>`)
+                .map(res =&gt; JSON.parse(res.text()))
+                .subscribe(
+                    itemData =&gt; {
+                        this.setItem(id, JSON.stringify(itemData));
+                        this.items.push(itemData);
+                    },
+                    err =&gt; this.logError(err)
+                );
+        }
+    }
+
+    loadMore() {
+
+    }
+
+    // TODO
+    logError(error) {
+    }
+}
+</code>
+</pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A; index &#x89C6;&#x56FE;&#xFF0C;&#x4ECE; hacker news &#x63D0;&#x4F9B;&#x7684; api &#x4E2D;&#x83B7;&#x53D6;&#x65B0;&#x95FB;&#x5217;&#x8868;&#xFF0C;&#x8FD9;&#x4E2A;&#x6211;&#x5DF2;&#x7ECF;&#x5C01;&#x88C5;&#x4E86;&#x4E00;&#x4E2A; service&#xFF0C;&#x4F46;&#x662F;&#x4E0A;&#x9762;&#x7684;&#x4E5F;&#x5C31;&#x7559;&#x7740;&#x5427;&#x3002;</p>
+<h4 id="header-0-2-2"><span class="section-number">0.2.2</span>&#x89C6;&#x56FE;</h4>
+&#x53D6;&#x56DE;&#x6765;&#x4E4B;&#x540E;&#x8BA1;&#x7B97;&#x4E00;&#x4E9B;&#x65F6;&#x95F4;&#x8DDD;&#x79BB;&#xFF0C;&#x6E32;&#x67D3;&#x4E86;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#xFF0C;&#x70B9;&#x5F00;&#x5217;&#x8868;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x9AD8;&#x4EAE;&#x7684;&#x6309;&#x94AE;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6253;&#x5F00;&#x6B23;&#x6170;&#x5217;&#x8868;&#x548C;&#x6536;&#x85CF;&#xFF0C; &#x6536;&#x85CF;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x5B58;&#x5165; localstorage &#x4E2D;&#x3002;<p>file: index.html</p>
+<pre class="prettyprint"><code class="language-html">&lt;ion-navbar hack *navbar&gt;
+    &lt;ion-title&gt;Hack News&lt;/ion-title&gt;
+
+    &lt;ion-buttons end&gt;
+    &lt;button (click)=&quot;goStar($event, bs)&quot;&gt;
+        &lt;ion-icon [name]=&quot;&apos;md-star&apos;&quot;&gt;&lt;/ion-icon&gt;
+    &lt;/button&gt;
+  &lt;/ion-buttons&gt;
+&lt;/ion-navbar&gt;
+
+&lt;button-sequence #bs [vButtons]=&quot;vButtons&quot; [hButtons]=&quot;hButtons&quot; (clicked)=&quot;bsClicked = !bsClicked; closeChoose(bsClicked)&quot;&gt;&lt;/button-sequence&gt;
+
+
+&lt;ion-content (click)=&quot;contentClick($event, bs)&quot;&gt;
+
+  &lt;ion-refresher (refresh)=&quot;doRefresh($event)&quot;&gt;
+    &lt;ion-refresher-content&gt;
+    &lt;/ion-refresher-content&gt;
+  &lt;/ion-refresher&gt;
+
+
+    
+    &lt;ion-card wave *ngFor=&quot;#item of items; #i = index&quot; class=&quot;item-card&quot; (click)=&quot;cardClick(item, i)&quot;&gt;
+
+        &lt;ion-card-content&gt;
+            &lt;p&gt;{{ item.title }}&lt;/p&gt;
+        &lt;/ion-card-content&gt;
+
+        &lt;ion-item&gt;
+            &lt;p&gt;{{ item.by }}&lt;/p&gt;
+            &lt;p *ngIf=&quot;item.text&quot;&gt;{{ item.text }}&lt;/p&gt;
+            &lt;p&gt;{{ calcTimeDistance(item.time) }}&lt;/p&gt;
+        &lt;/ion-item&gt;
+        
+        &lt;div *ngIf=&quot;item.opChoose&quot; class=&quot;choose-container&quot; [ngClass]=&quot;{move: item.chooseMove}&quot;&gt;
+            &lt;div class=&quot;choose-button star&quot; (click)=&quot;starItem($event, item.id)&quot;&gt;
+                &lt;ion-icon [name]=&quot;&apos;md-star&apos;&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;choose-button open&quot; (click)=&quot;openUrl($event, item.url)&quot;&gt;
+                &lt;ion-icon [name]=&quot;&apos;md-compass&apos;&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+    &lt;/ion-card&gt;
+
+
+&lt;/ion-content&gt;</code>
+</pre>
+<h4 id="header-0-2-3"><span class="section-number">0.2.3</span>component</h4>
+angular2 &#x7684; component &#x7684;&#x6A21;&#x5F0F;&#x7684;&#x597D;&#x5904;&#x5728;&#x4E8E;&#xFF0C;&#x4E00;&#x822C;&#x90FD;&#x4F1A;&#x628A; scss&#xFF0C; html&#xFF0C; js &#x4E09;&#x4E2A;&#x6587;&#x4EF6;&#x653E;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x6539;&#x52A8;&#x8D77;&#x6765;&#x5341;&#x5206;&#x65B9;&#x4FBF;&#x3002;<p>index.html &#x5B9A;&#x4E49;&#x4E86;&#x65C1;&#x8FB9;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x6309;&#x94AE;&#xFF0C;&#x4E0D;&#x7528;&#x7684;&#x65F6;&#x5019;&#x6536;&#x7F29;&#x6210;&#x4E00;&#x4E2A;&#xFF0C;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x65B0;&#x95FB;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x4E9B;&#x6309;&#x94AE;&#x5B9A;&#x4E49;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;</p>
+<p><i>file: button-squence.js</i></p>
+<pre class="prettyprint"><code class="language-typescript">import {Component, Input, Output, ElementRef, EventEmitter, Hostlistener} from &apos;angular2/core&apos;;
+import {Icon, Animation} from &apos;ionic&apos;;
+
+import &apos;./buttonSequence.scss&apos;
+
+const buttonSize = 60;
+const buttonGap = 30;
+const buttonHideOpacity = 0.5;
+//const marginToCorner = 30;
+
+@Component({
+    selector: &apos;button-sequence&apos;,
+    template: `
+    &lt;div&gt;
+        &lt;div class=&quot;sequence-button&quot; (click)=&quot;toggle($event)&quot;&gt;
+            &lt;ion-icon name=&quot;md-add&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/div&gt;
+        &lt;div  class=&quot;buttons-container&quot;&gt;
+        &lt;div *ngFor=&quot;#button of vButtons&quot; [ngStyle]=&quot;{bottom: button.bottom, opacity: button.opacity}&quot;
+               (click)=&quot;buttonClick(button.fn, $event)&quot; class=&quot;sequence-button v&quot;&gt;
+               &lt;ion-icon [name]=&quot;button.icon&quot;&gt;&lt;/ion-icon&gt;
+        &lt;span class=&quot;button-txt&quot; *ngIf=&quot;showButtons&quot;&gt;{{ button.txt }}&lt;/span&gt;
+            &lt;/div&gt;
+      
+        &lt;div *ngFor=&quot;#button of hButtons&quot; [ngStyle]=&quot;{right: button.right, opacity: button.opacity}&quot;
+               (click)=&quot;buttonClick(button.fn, $event)&quot; class=&quot;sequence-button h&quot;&gt;
+               &lt;ion-icon [name]=&quot;button.icon&quot;&gt;&lt;/ion-icon&gt;
+        &lt;span class=&quot;button-txt&quot; *ngIf=&quot;showButtons&quot;&gt;{{ button.txt }}&lt;/span&gt;
+            &lt;/div&gt;
+
+    &lt;/div&gt;`,
+    host: {
+        &apos;class&apos;: &apos;button-sequence&apos;
+    },
+    directives: [Icon]
+})
+export class ButtonSequence {
+    // &#x6C34;&#x5E73; buttons
+    private showButtons:bolean = false;
+    
+    @Input() hButtons: Array&lt;{
+        icon: string,
+        txt: string,
+        fn: any
+    }&gt; = [];
+    // &#x5782;&#x76F4; buttons
+    @Input() vButtons: Array&lt;{
+        icon: string,
+        txt: string,
+        fn: any
+    }&gt; = [];
+
+    @Output() clicked = new EventEmitter();
+    
+    constructor(private elementRef :ElementRef) {
+
+        this.vButtons.map((button) =&gt; {
+            button.opacity = buttonHideOpacity;
+        });
+        this.hButtons.map((button) =&gt; {
+            button.opacity = buttonHideOpacity;
+        });
+    }
+
+    buttonClick(fn, e) {
+        fn(e);
+        this.toggle(e);
+    }
+
+
+    public toggle(event) {
+        console.log(&apos;toggle&apos;);
+        
+        event.preventDefault();
+        event.stopPropagation();
+        
+        this.showButtons = !this.showButtons;
+
+        this.clicked.emit(this.showButtons);
+        
+        if( this.showButtons ){
+            let b = 0;
+            this.vButtons.map((button) =&gt; {
+                b = buttonGap + buttonSize + b;
+                button.bottom = b + &apos;px&apos;;
+                button.opacity = 1;
+            });
+
+            b = 0;
+            this.hButtons.map((button) =&gt; {
+                b = buttonGap + buttonSize + b;
+                button.right = b + &apos;px&apos;;
+                button.opacity = 1;
+            });
+            
+        } else {
+            this.vButtons.map((button) =&gt; {
+                button.bottom = null;
+                button.opacity = buttonHideOpacity;
+            });
+
+            this.hButtons.map((button) =&gt; {
+                button.right = null;
+                button.opacity = buttonHideOpacity;
+            });
+        }
+
+
+
+    }
+    
+}
+</code>
+</pre>
+<p><i>file: button.js</i></p>
+<pre class="prettyprint"><code class="language-typescript">import {Component, Input, HostListener, ElementRef} from &apos;angular2/core&apos;;
+import {Icon, Animation} from &apos;ionic/ionic&apos;;
+
+import &apos;./buttonSequence.scss&apos;
+
+@Component({
+    selector: &apos;sequence-button&apos;,
+    template: `
+        &lt;div class=&quot;sequence-button&quot;&gt;
+            &lt;ion-icon [name]=&quot;content.icon&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/div&gt;`,
+    host: {
+        &apos;class&apos;: &apos;button-sequence&apos;
+    },
+    directives: [Icon],
+    host: {
+        style: &apos;content.style&apos;
+    }
+})
+export class SequenceButton {
+    // &#x6C34;&#x5E73; buttons
+    @Input() content;
+
+    
+    constructor(private _elementRef: ElementRef) {
+        
+    }
+
+    public click(elem) {
+
+        
+        
+    }
+    
+}
+</code>
+</pre>
+<h4 id="header-0-2-4"><span class="section-number">0.2.4</span>&#x6536;&#x85CF;&#x9875;&#x9762;</h4>
+<p>ionic2 &#x9ED8;&#x8BA4;&#x7684;&#x8DEF;&#x7531;&#x7B56;&#x7565;&#x4E0D;&#x662F;&#x901A;&#x8FC7; url&#xFF0C;&#x662F;&#x76F4;&#x63A5;&#x64CD;&#x4F5C; dom&#xFF0C;&#x8FD9;&#x4E2A;&#x597D;&#x50CF;&#x5728;&#x8C03;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x9EBB;&#x70E6;&#x4E00;&#x4E9B;&#xFF0C;&#x4E0B;&#x9762;&#x5B9A;&#x4E49;&#x6536;&#x85CF;&#x9875;&#x9762;</p>
+<p><i>file: star.html</i></p>
+<pre class="prettyprint"><code class="language-typescript">import {Page, Icon, NavController, Storage, LocalStorage, Hostlistener} from &apos;ionic&apos;;
+
+import {HacknewApi} from &apos;../../service/hacknew-api/hacknew-api&apos;
+import {CONFIG} from &apos;../../config.js&apos;;
+
+
+@Page({
+    templateUrl: &apos;build/pages/star/star.html&apos;,
+    directives: [Icon],
+    providers: [HacknewApi]
+})
+export class StarPage {
+    constructor(nav: NavController, hack: HacknewApi) {
+        this.items = [];
+        this.local = new Storage(LocalStorage);
+        this.hackapi = hack;
+
+        this.refresh();
+    }
+
+    refresh() {
+        let starList = JSON.parse(this.local.get(&apos;star_list&apos;)._result);
+        console.log(starList);
+        starList.map((starItem) =&gt; {
+            let starItem = JSON.parse(starItem);
+            this.hackapi.getItem(starItem.itemId, (data) =&gt; {
+                this.renderItem(starItem.date, data);
+            });
+            
+        });
+    }
+
+    renderItem(date, item) {
+        console.log(item);
+        this.items.push(item);
+    }
+
+    cardClick() {
+        
+    }
+}
+</code>
+</pre>
+<pre class="prettyprint"><code class="language-html">&lt;ion-navbar hack *navbar&gt;
+    &lt;ion-title&gt;Star&lt;/ion-title&gt;
+&lt;/ion-navbar&gt;
+
+&lt;ion-content&gt;
+
+  &lt;ion-card wave *ngFor=&quot;#item of items; #i = index&quot; class=&quot;item-card&quot; (click)=&quot;cardClick(item, i)&quot;&gt;
+
+    &lt;ion-card-content&gt;
+      &lt;p&gt;{{ item.title }}&lt;/p&gt;
+    &lt;/ion-card-content&gt;
+
+    &lt;ion-item&gt;
+      &lt;p&gt;{{ item.by }}&lt;/p&gt;
+      &lt;p *ngIf=&quot;item.text&quot;&gt;{{ item.text }}&lt;/p&gt;
+    &lt;/ion-item&gt;
+    
+    &lt;div *ngIf=&quot;item.opChoose&quot; class=&quot;choose-container&quot; [ngClass]=&quot;{move: item.chooseMove}&quot;&gt;
+      &lt;div class=&quot;choose-button star&quot; (click)=&quot;openUrl($event, item.url)&quot;&gt;
+        &lt;ion-icon [name]=&quot;&apos;md-star&apos;&quot;&gt;&lt;/ion-icon&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;choose-button open&quot; (click)=&quot;starItem($event, item.id)&quot;&gt;
+        &lt;ion-icon [name]=&quot;&apos;md-compass&apos;&quot;&gt;&lt;/ion-icon&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+  &lt;/ion-card&gt;
+    
+&lt;/ion-content&gt;
+
+
+
+</code>
+</pre>
+<h4 id="header-0-2-5"><span class="section-number">0.2.5</span>&#x6307;&#x4EE4;</h4>
+angular2 &#x7684;&#x6307;&#x4EE4;&#x601D;&#x60F3;&#x548C; angular1 &#x5DEE;&#x7684;&#x4E0D;&#x662F;&#x5F88;&#x591A;&#xFF0C;&#x90FD;&#x662F;&#x64CD;&#x4F5C; dom &#x7684;&#x5730;&#x65B9;&#xFF0C; &#x628A; dom &#x548C;&#x903B;&#x8F91;&#x5C42;&#x9694;&#x5F00;&#x3002;&#x867D;&#x7136;&#x5F62;&#x5F0F;&#x4E0A;&#x6709;&#x5F88;&#x5927;&#x7684;&#x4E0D;&#x4E00;&#x6837;, &#x4F8B;&#x5982;&#x6CE8;&#x5165;&#x51FD;&#x6570;&#x53D8;&#x6210;&#x4E86;&#x6784;&#x9020;&#x5668;&#x5F62;&#x5F0F;&#xFF0C;element &#x4E5F;&#x5C01;&#x88C5;&#x6210;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x88C5;&#x9970;&#x5668;&#x4E86;<p><i>file choose.js</i></p>
+<pre class="prettyprint"><code class="language-javascript">wimport {Directive, ElementRef, Input, HostListener} from &apos;angular2/core&apos;;
+
+import &apos;./choose.scss&apos;;
+
+//const headerHeight = 44;
+
+@Directive({
+    selector: &apos;[card-choose]&apos;
+})
+export class ChooseDirective {
+    
+    constructor(private el: ElementRef) {
+        // el.nativeElement.style.backgroundColor = &apos;yellow&apos;;
+        this.buttons = [{
+            icon: &apos;md-star&apos;,
+            txt: &apos;Star&apos;,
+            fn: ($event) =&gt; {
+                console.log(&apos;star&apos;);
+            }
+        },{
+            icon: &apos;md-star&apos;,
+            txt: &apos;Star2&apos;,
+            fn: ($event) =&gt; {
+                console.log(&apos;star2&apos;);
+            }
+        }]
+    }
+
+    @HostListener(&apos;click&apos;, [&apos;$event&apos;])
+    public onClick($event) {
+        $event.preventDefault();
+
+        /* let offsetX = $event.pageY - this.el.nativeElement.offsetTop + this.el.nativeElement.parentNode.scrollTop - headerHeight,
+           offsetY = $event.pageX - this.el.nativeElement.offsetLeft - 25; */
+
+        let cardHeight = this.el.nativeElement.clientHeight,
+            cardWidth = this.el.nativeElement.clientWidth;
+
+        let centerX = cardWidth / 2,
+            centerY = cardHeight / 2;
+
+        console.log($event);
+        console.log(this.el);
+
+        let container = document.createElement(&apos;div&apos;);
+
+        container.classList.add(&apos;card-choose-container&apos;);
+        container.style.top = centerX + &apos;px&apos;;
+        container.style.left = centerY + &apos;px&apos;;
+
+        this.buttons.map((button) =&gt; {
+            let ct = document.createElement(&apos;div&apos;);
+            ct.classList.add(&apos;choose-button&apos;);
+
+            //let icon = document.
+
+        });
+
+        this.el.nativeElement.appendChild(container);
+        
+        
+    }
+    
+    
+}</code>
+</pre>
+<p><i>file wave.js</i></p>
+<pre class="prettyprint"><code class="language-javascript">import {Directive, ElementRef, Input, HostListener} from &apos;angular2/core&apos;;
+
+import &apos;./wave.scss&apos;;
+
+@Directive({
+    selector: &apos;[wave]&apos;,
+    host: {
+        &apos;class&apos;: &apos;wave-ripple&apos;
+    }
+})
+export class WaveDirective {
+    
+    constructor(private el: ElementRef) {
+        // el.nativeElement.style.backgroundColor = &apos;yellow&apos;;
+    }
+
+    @HostListener(&apos;click&apos;, [&apos;$event&apos;])
+    public onClick($event) {
+        $event.preventDefault();
+        let elHeight = this.el.nativeElement.clientHeight,
+        elWidth = this.el.nativeElement.clientWidth;
+        // console.log(this.el.nativeElement.parentNode.scrollTop);
+        // console.log($event.y);
+        // console.log(this.el.nativeElement.offsetTop);
+        let ripple = document.createElement(&apos;div&apos;);
+        ripple.classList.add(&apos;wave-ripple-effect&apos;);
+
+        // &#x8FD8;&#x8981;&#x51CF;&#x53BB; content &#x7684; scrollTop &#x7684;&#x503C;
+        ripple.style.top = ($event.pageY - this.el.nativeElement.offsetTop + this.el.nativeElement.parentNode.scrollTop - 44 - 25 ) + &apos;px&apos;; // 44 &#x4E3A;&#x5934;&#x90E8;&#x7684;&#x9AD8;&#x5EA6;
+        ripple.style.left = ($event.pageX - this.el.nativeElement.offsetLeft - 25) + &apos;px&apos;;
+        
+        this.el.nativeElement.appendChild(ripple);
+
+        setTimeout(() =&gt; {
+            this.el.nativeElement.removeChild(ripple);
+        }, 2000)
+
+        // console.log(this.el)
+        //console.log($event);
+    }
+    
+    
+}</code>
+</pre>
+
+
+        
+      </div>
+      
+      <div class="footer-avator">
+
+    <div class="hr"></div>
+    
+    <img alt="" src="/static/img/me.jpg"/>
+
+    <p class="footer-avator--author">陳放為</p>
+    <p class="footer-avator--author-desc">一个码农 </p>
+    
+</div>
+
+      
+      <footer class="footer-article">
+
+    <div class="hr"></div>
+    
+    <div class="footer-text">
+        <p>陳放為的博客 All rights reserved.</p>
+        <ul class="footer-icons">
+            
+            <li>
+                <a href="https://github.com/AbyChan/" target="_blank">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M512 0c-282.75 0-512 229.25-512 512 0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312-142.375 30.937-172.469-60.375-172.469-60.375-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375-113.656-12.937-233.218-56.875-233.218-253.063 0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562 203.313-67.812 349.875-259.687 349.875-485.812 0-282.75-229.25-512-512-512z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM256 256h512c9.138 0 18.004 1.962 26.144 5.662l-282.144 329.168-282.144-329.17c8.14-3.696 17.006-5.66 26.144-5.66zM192 704v-384c0-1.34 0.056-2.672 0.14-4l187.664 218.942-185.598 185.598c-1.444-5.336-2.206-10.886-2.206-16.54zM768 768h-512c-5.654 0-11.202-0.762-16.54-2.208l182.118-182.118 90.422 105.498 90.424-105.494 182.116 182.12c-5.34 1.44-10.886 2.202-16.54 2.202zM832 704c0 5.654-0.762 11.2-2.206 16.54l-185.6-185.598 187.666-218.942c0.084 1.328 0.14 2.66 0.14 4v384z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path class="path1" d="M928 0h-832c-52.8 0-96 43.2-96 96v832c0 52.8 43.2 96 96 96h832c52.8 0 96-43.2 96-96v-832c0-52.8-43.2-96-96-96zM279 831.2c-48 0-87-38.6-87-86.6 0-47.6 39-86.8 87-86.8 48.2 0 87 39.2 87 86.8 0 48-39 86.6-87 86.6zM497.4 832c0-81.8-31.8-158.8-89.4-216.4-57.8-57.8-134.4-89.6-216-89.6v-125.2c237.6 0 431.2 193.4 431.2 431.2h-125.8zM719.6 832c0-291-236.6-528-527.4-528v-125.2c360 0 653 293.2 653 653.2h-125.6z"></path>
+                    </svg>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</footer>
+
+    </div>
+    
+
+
+    <script src="/static/js/article.bundle.js"></script>
+    <script src="/static/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

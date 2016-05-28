@@ -1,0 +1,293 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Emacs 基础函数</title>
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+    
+    
+    <link rel="stylesheet" href="/static/css/lib/normalize.css">
+    <link rel="stylesheet" href="/static/css/hl-styles/monokai-sublime.css">
+    <link rel="stylesheet" href="/static/css/article.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+  </head>
+
+
+  <body>
+
+    <div class="slide-tag  slide-tag-article ">
+  <div class="toggle-button">
+    <a href="javascript:;" class="slide-button"><i class="fa fa-bars" aria-hidden="true"></i></a>
+  </div>
+  
+  <ul>
+    
+    <li class="index" title="首页">
+      <a href="/" class="slide-button"><i class="fa fa-home" aria-hidden="true"></i></a><span>首页</span>
+    </li>
+    
+    <li title="所有文章">
+      <a href="/page/1/index.html" class="slide-button"><i class="fa fa-list-alt" aria-hidden="true"></i></a><span>所有文章</span>
+    </li>
+    <li title="目录">
+      <a href="/category/index.html" class="slide-button"><i class="fa fa-list-ol" aria-hidden="true"></i></a><span>目录</span>
+    </li>
+    
+      <li title="上一级">
+        <a href="./index.html" class="slide-button"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a><span>上一级</span>
+      </li>
+    
+    <li title="关于我">
+      <a href="http://cfw.io" class="slide-button"><i class="fa fa-user" aria-hidden="true"></i></a><span>关于我</span>
+    </li>
+  </ul>
+</div>
+
+
+    <div class="main">
+      
+      
+      <div class="article org">
+        <h1 class="title">Emacs 基础函数</h1>
+        <span class="show-time">2016年4月24日 上午7:54</span>
+        <br/>
+        <br/>
+        <div class="hr"></div>
+        
+        <ul><li><a href="#header-"><span class="section-number"></span></a><ul><li><a href="#header-0-1"><span class="section-number">0.1</span>&#x52A0;&#x8F7D;&#x811A;&#x672C;</a><ul><li><a href="#header-0-1-1"><span class="section-number">0.1.1</span>load</a></li>
+<li><a href="#header-0-1-2"><span class="section-number">0.1.2</span>load-path</a></li>
+<li><a href="#header-0-1-3"><span class="section-number">0.1.3</span>&#x5C0F;&#x6280;&#x5DE7;</a></li>
+</ul>
+</li>
+<li><a href="#header-0-2"><span class="section-number">0.2</span>&#x7ED1;&#x5B9A;&#x952E;&#x4F4D;</a><ul><li><a href="#header-0-2-1"><span class="section-number">0.2.1</span>&#x5168;&#x5C40;&#x7ED1;&#x5B9A;</a></li>
+<li><a href="#header-0-2-2"><span class="section-number">0.2.2</span>&#x6A21;&#x5F0F;&#x7ED1;&#x5B9A;</a></li>
+</ul>
+</li>
+<li><a href="#header-0-3"><span class="section-number">0.3</span>&#x8BBE;&#x7F6E; warning &#x7EA7;&#x522B;</a></li>
+<li><a href="#header-0-4"><span class="section-number">0.4</span>server (daemon)</a><ul><li><a href="#header-0-4-1"><span class="section-number">0.4.1</span>tip</a></li>
+</ul>
+</li>
+<li><a href="#header-0-5"><span class="section-number">0.5</span>&#x5916;&#x89C2;</a><ul><li><a href="#header-0-5-1"><span class="section-number">0.5.1</span>widget </a></li>
+<li><a href="#header-0-5-2"><span class="section-number">0.5.2</span>&#x521D;&#x59CB;&#x5316;&#x754C;&#x9762;</a></li>
+<li><a href="#header-0-5-3"><span class="section-number">0.5.3</span>&#x900F;&#x660E;&#x5EA6;</a></li>
+<li><a href="#header-0-5-4"><span class="section-number">0.5.4</span>theme</a></li>
+<li><a href="#header-0-5-5"><span class="section-number">0.5.5</span>&#x9AD8;&#x4EAE;</a></li>
+</ul>
+</li>
+<li><a href="#header-0-6"><span class="section-number">0.6</span>&#x57FA;&#x672C;&#x8BBE;&#x7F6E;</a></li>
+</ul>
+</li>
+</ul>
+<p>&#x521D;&#x5B66; emacs &#x7684;&#x4EBA;&#x672A;&#x5FC5;&#x4F1A;&#x6709;&#x8010;&#x5FC3;&#x5B66;&#x4E60; elisp&#xFF0C;&#x4F46;&#x662F;&#x5B66;&#x4F1A;&#x914D;&#x7F6E; emacs &#x662F;&#x5341;&#x5206;&#x91CD;&#x8981;&#x7684;&#xFF0C;&#x8FD9;&#x7BC7;&#x535A;&#x5BA2;&#x7ED9;&#x5927;&#x5BB6;&#x666E;&#x53CA;&#x4E00;&#x4E0B; elisp &#x57FA;&#x672C;&#x7684;&#x914D;&#x7F6E;&#x51FD;&#x6570;&#x3002;</p>
+<h3 id="header-0-1"><span class="section-number">0.1</span>&#x52A0;&#x8F7D;&#x811A;&#x672C;</h3>
+<h4 id="header-0-1-1"><span class="section-number">0.1.1</span>load</h4>
+&#x52A0;&#x8F7D;&#x811A;&#x672C;&#x7684;&#x51FD;&#x6570;&#x662F; (load)&#x4F8B;&#x5982;&#xFF1A;<pre class="prettyprint"><code class="language-lisp">(load &quot;~/.emacs.d/phoenix-init.el&quot;)</code>
+</pre>
+<h4 id="header-0-1-2"><span class="section-number">0.1.2</span>load-path</h4>
+elisp &#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x6982;&#x5FF5; load-pathload-path &#x5C31;&#x662F;&#x4F60;&#x53EF;&#x4EE5; load &#x7684;&#x811A;&#x672C;&#x6240;&#x5728;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x53EA;&#x6709;&#x5B58;&#x5728;&#x4E8E; load-path &#x7684; elisp &#x811A;&#x672C;&#x624D;&#x80FD;&#x88AB; require &#x5230;&#x3002;<a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html">https://www.gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html</a><p>&#x901A;&#x5E38;&#x6709;&#x89C4;&#x5212;&#x7684;&#x914D;&#x7F6E;&#x4F1A;&#x5212;&#x5206;&#x4E0D;&#x540C;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x6765;&#x653E;&#x4E0D;&#x540C;&#x7684;&#x811A;&#x672C;</p>
+<pre class="prettyprint"><code class="language-lisp">;;&#x52A0;&#x8F7D;&#x5404;&#x79CD;&#x6587;&#x4EF6;&#x5939;
+(setq site-lisp-dir
+      (expand-file-name &quot;site-lisp&quot; user-emacs-directory))
+
+(setq setup-dir 
+      (expand-file-name &quot;setup&quot; user-emacs-directory))
+
+(setq setting-dir
+      (expand-file-name &quot;setting&quot; user-emacs-directory))
+
+(setq lib-dir
+      (expand-file-name &quot;lib&quot; user-emacs-directory))
+
+
+(add-to-list &apos;load-path site-lisp-dir)
+(add-to-list &apos;load-path setup-dir) 
+(add-to-list &apos;load-path setting-dir)
+(add-to-list &apos;load-path lib-dir)</code>
+</pre>
+<h4 id="header-0-1-3"><span class="section-number">0.1.3</span>&#x5C0F;&#x6280;&#x5DE7;</h4>
+&#x5982;&#x679C;&#x4F60;&#x6709;&#x4E00;&#x4E9B;&#x63D2;&#x4EF6;&#x4E0D;&#x5728;&#x63D2;&#x4EF6;&#x5E93;&#x5B89;&#x88C5;&#xFF0C;&#x800C;&#x662F;&#x50CF;&#x6211;&#x4E00;&#x6837;&#x5F00;&#x4E86;&#x4E00;&#x4E2A; elisp-site &#x6765;&#x653E;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6765;&#x52A0;&#x8F7D;&#x6BCF;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;&#x6587;&#x4EF6;&#x5939;&#x3002;<pre class="prettyprint"><code class="language-lisp">(dolist (project (directory-files site-lisp-dir t &quot;\\w+&quot;))
+  (when (file-directory-p project)
+    (add-to-list &apos;load-path project)))</code>
+</pre>
+<h3 id="header-0-2"><span class="section-number">0.2</span>&#x7ED1;&#x5B9A;&#x952E;&#x4F4D;</h3>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Key-Binding-Commands.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Key-Binding-Commands.html</a><h4 id="header-0-2-1"><span class="section-number">0.2.1</span>&#x5168;&#x5C40;&#x7ED1;&#x5B9A;</h4>
+&#x5168;&#x5C40;&#x7ED1;&#x5B9A;&#x7684;&#x8BDD;&#x4F7F;&#x7528;&#x7684;&#x662F;(global-set-key)&#x952E;&#x4F4D;&#x7684;&#x9009;&#x62E9;&#x63A8;&#x8350;&#x662F;&#x4F7F;&#x7528; (kbd), &#x56E0;&#x4E3A;&#x6BD4;&#x8F83;&#x597D;, &#x4E0D;&#x7528;&#x8F6C;&#x4E49;&#x548C;&#x8003;&#x8651;shift&#x7B49;&#xFF0C;&#x5F53;&#x7136;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x65B9;&#x6CD5;,&#x4F8B;&#x5982;:<pre class="prettyprint"><code class="language-lisp">(global-set-key [M-mouse-1] &apos;mouse-set-point)</code>
+</pre>
+&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x7ED1;&#x5B9A; change-inner &#x8FD9;&#x4E2A;&#x63D2;&#x4EF6;&#x7684;&#x5FEB;&#x6377;&#x952E;<pre class="prettyprint"><code class="language-lisp">(require &apos;change-inner)
+(global-set-key (kbd &quot;C-c i&quot;) &apos;change-inner)
+(global-set-key (kbd &quot;C-c o&quot;) &apos;change-outer)</code>
+</pre>
+<p>&#x5982;&#x679C;&#x6709;&#x4E9B;&#x952E;&#x4F4D;&#x662F;&#x539F;&#x751F;&#x81EA;&#x5E26;&#x7684;&#xFF0C;&#x901A;&#x5E38;&#x9700;&#x8981;&#x5148;&#x53D6;&#x6D88;</p>
+<pre class="prettyprint"><code class="language-lisp">(global-unset-key &quot;\C-z&quot;)</code>
+</pre>
+<h4 id="header-0-2-2"><span class="section-number">0.2.2</span>&#x6A21;&#x5F0F;&#x7ED1;&#x5B9A;</h4>
+&#x76F8;&#x5F53;&#x4E8E;&#x5C40;&#x90E8;&#x7ED1;&#x5B9A;&#xFF0C;&#x7ED1;&#x5B9A;&#x67D0;&#x4E2A; mode<pre class="prettyprint"><code class="language-lisp">(define-key js2-mode-map (kbd &quot;C-k&quot;) &apos;js2r-kill)</code>
+</pre>
+<h3 id="header-0-3"><span class="section-number">0.3</span>&#x8BBE;&#x7F6E; warning &#x7EA7;&#x522B;</h3>
+<a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Warning-Options.html">https://www.gnu.org/software/emacs/manual/html_node/elisp/Warning-Options.html</a>&#x5982;&#x679C;&#x4F60;&#x7684;&#x914D;&#x7F6E;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x662F;&#x81EA;&#x5DF1;&#x5B89;&#x88C5;&#xFF0C;&#x90A3;&#x4E48;&#x96BE;&#x514D;&#x4F1A;&#x9047;&#x5230;&#x4E00;&#x4E9B;&#x63D2;&#x4EF6;&#x4F1A;&#x62A5;&#x51FA; warning&#xFF0C;&#x5728;&#x521D;&#x59CB;&#x754C;&#x9762;&#x662F;&#x5341;&#x5206;&#x70E6;&#x4EBA;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; warning &#x7EA7;&#x522B;&#xFF1A;<pre class="prettyprint"><code class="language-lisp">(setq warning-minimum-level :emergency)</code>
+</pre>
+<h3 id="header-0-4"><span class="section-number">0.4</span>server (daemon)</h3>
+emacs &#x88C5;&#x4E86;&#x5F88;&#x591A;&#x63D2;&#x4EF6;&#x7684;&#x8BDD;&#xFF0C;&#x542F;&#x52A8;&#x662F;&#x5341;&#x5206;&#x6EE1;&#xFF0C;&#x6BD4; vim &#x6162;&#x662F;&#x516C;&#x8BA4;&#x7684;&#xFF0C;&#x4F46;&#x662F; emacs &#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A; server &#x5B58;&#x5728;&#xFF0C;&#x5C31;&#x662F;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;(daemon)&#xFF0C;hold &#x5728;&#x540E;&#x53F0;&#x4E2D;&#xFF0C;&#x542F;&#x52A8;&#x7684;&#x8BDD;&#x5219;&#x542F;&#x52A8; emacsclient&#xFF0C;&#x90A3;&#x6837;&#x7684;&#x8BDD;&#x542F;&#x52A8;&#x5C31;&#x4F1A;&#x79D2;&#x5F00;&#xFF0C;&#x591A;&#x4E2A; emacsclient &#x5171;&#x7528;&#x4E00;&#x4E2A; emacs &#x540E;&#x53F0;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4; buffer &#x90FD;&#x662F; hold &#x4F4F;&#x7684;&#x3002;&#x4EE5;&#x524D;&#x6211;&#x7528; linux &#x7684;&#x65F6;&#x5019;&#x5C31;&#x5F88;&#x559C;&#x6B22;&#x5199;&#x4E00;&#x4E2A;&#x811A;&#x672C;&#xFF0C;&#x5F00;&#x673A;&#x7684;&#x65F6;&#x5019;&#x81EA;&#x52A8;&#x5F00;&#x542F; emacs-daemon&#xFF0C;&#x53C2;&#x8003;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;:<a href="https://www.emacswiki.org/emacs/EmacsAsDaemon">https://www.emacswiki.org/emacs/EmacsAsDaemon</a>&#x4E0D;&#x8FC7;&#x73B0;&#x5728;&#x4E5F;&#x61D2;&#x5F97;&#x6298;&#x817E;&#x4E86;&#xFF0C;&#x5728;&#x5F00;&#x542F; emacs &#x7684;&#x65F6;&#x5019;&#x5F00; server &#x5F00;&#x8D77;&#x6765;&#x5C31;&#x884C;&#x4E86;&#xFF0C;&#x53CD;&#x6B63; emacs &#x4E5F;&#x4E0D;&#x5173;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x542F;&#x52A8; server &#x7684;&#x4EE3;&#x7801;&#x3002;<pre class="prettyprint"><code class="language-lisp">(require &apos;server)
+(unless (server-running-p)
+  (server-start))</code>
+</pre>
+&#x5728; terminal&#xFF0C;&#x6253;&#x5F00; emacsclient &#x7684;&#x547D;&#x4EE4;&#x662F;&#x5F88;&#x957F;&#xFF0C;&#x901A;&#x5E38;&#x9700;&#x8981; alias&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<pre class="prettyprint"><code class="language-sh">alias emax=&quot;emacsclient -t&quot;                      # used to be &quot;emacs -nw&quot;
+alias semac=&quot;sudo emacsclient -t&quot;                # used to be &quot;sudo emacs -nw&quot;
+alias emacsc=&quot;emacsclient -c -a emacs&quot;           # new - opens the GUI with alternate non-daemon
+alias emacscn=&quot;emacsclient -n -a emacs&quot;           # new - opens the GUI with alternate non-daemon
+alias ema=&quot;emacsclient -n -a emacs&quot;           # new - opens the GUI with alternate non-daemon</code>
+</pre>
+<p>&#x5176;&#x4E2D;&#x6211;&#x6700;&#x5E38;&#x7528;&#x7684;&#x662F; ema&#xFF0C;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x5341;&#x5206;&#x597D;&#x7528;&#xFF0C;&#x76F4;&#x63A5;&#x5C31;&#x8DF3;&#x5230; emacs &#x754C;&#x9762;&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x4E86;&#x3002;</p>
+<h4 id="header-0-4-1"><span class="section-number">0.4.1</span>tip</h4>
+emacs &#x9ED8;&#x8BA4;&#x7684;&#x63A8;&#x51FA;&#x5FEB;&#x6377;&#x952E;&#x5341;&#x5206;&#x5BB9;&#x6613;&#x8BEF;&#x6309;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6362;&#x4E00;&#x4E2A;&#x5FEB;&#x6377;&#x952E;<pre class="prettyprint"><code class="language-lisp">(global-set-key (kbd &quot;C-x r q&quot;) &apos;save-buffers-kill-terminal)
+(global-set-key (kbd &quot;C-x C-c&quot;) &apos;delete-frame)</code>
+</pre>
+&#x8FD9;&#x6837;&#x8BBE;&#x7F6E;&#x4E4B;&#x540E; C-x C-c &#x53EA;&#x4F1A;&#x9000;&#x51FA;&#x4E00;&#x4E2A; frame&#xFF0C; &#x5C31;&#x662F;&#x4E00;&#x4E2A; emacsclient &#x7A97;&#x53E3;<h3 id="header-0-5"><span class="section-number">0.5</span>&#x5916;&#x89C2;</h3>
+<h4 id="header-0-5-1"><span class="section-number">0.5.1</span>widget </h4>
+emacs &#x9ED8;&#x8BA4;&#x7684;&#x5916;&#x89C2;&#x6CA1;&#x6709;&#x4EBA;&#x80FD;&#x53D7;&#x5F97;&#x4E86;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x53BB;&#x6389;&#x83DC;&#x5355;&#x680F;&#xFF0C;&#x5DE5;&#x5177;&#x680F;&#xFF0C;&#x5F88;&#x6EDA;&#x52A8;&#x6761;<pre class="prettyprint"><code class="language-lisp">(if (fboundp &apos;menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp &apos;tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp &apos;scroll-bar-mode) (scroll-bar-mode -1))</code>
+</pre>
+<h4 id="header-0-5-2"><span class="section-number">0.5.2</span>&#x521D;&#x59CB;&#x5316;&#x754C;&#x9762;</h4>
+&#x9ED8;&#x8BA4;&#x7684;&#x521D;&#x59CB;&#x5316;&#x754C;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5E2E;&#x52A9;&#x754C;&#x9762;&#xFF0C;&#x5F53;&#x7136;&#x4F60;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; spacemacs &#x90A3;&#x6837;&#x7684;&#x754C;&#x9762;&#x3002;&#x4E0D;&#x8FC7;&#x6211;&#x7684;&#x4E60;&#x60EF;&#x662F;&#x8BBE;&#x7F6E;&#x9648;&#x4E00;&#x4E2A; scratch (&#x8349;&#x7A3F;)buffer&#x3002;&#x53EF;&#x4EE5; load &#x51FA;&#x5404;&#x79CD;&#x56FE;&#x6848;<pre class="prettyprint"><code class="language-lisp">;;&#x53BB;&#x9664;&#x521D;&#x59CB;&#x5316;&#x9875;&#x9762;
+(setq inhibit-startup-message t)
+
+(setq initial-scratch-message (with-temp-buffer
+                                (insert-file-contents &quot;~/.emacs.d/misc/doge.ascii&quot;)
+                                (buffer-string)))</code>
+</pre>
+<h4 id="header-0-5-3"><span class="section-number">0.5.3</span>&#x900F;&#x660E;&#x5EA6;</h4>
+emacs &#x548C; vim &#x7684;&#x795E;&#x683C;&#x6709;&#x4E00;&#x90E8;&#x5206;&#x51DD;&#x805A;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x900F;&#x660E;&#x5EA6;&#xFF0C;&#x975E;&#x5E38;&#x9177;&#x70AB;&#x7684;&#xFF0C;&#x7528;&#x5176;&#x4ED6;&#x7F16;&#x8F91;&#x5668;&#x7684;&#x4EBA;&#x662F;&#x7FA1;&#x6155;&#x4E0D;&#x6765;&#x7684;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x4F4E;&#x7684;&#x900F;&#x660E;&#x5EA6;&#xFF0C;&#x7136;&#x540E;&#x542F;&#x52A8; liveload&#xFF0C; &#x6539;&#x4E86;&#x4EE3;&#x7801;&#x7ACB;&#x9A6C;&#x53EF;&#x4EE5;&#x5728; emacs &#x540E;&#x9762;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x770B;&#x5230;&#x6548;&#x679C;&#x3002;(&#x6709;&#x4EBA;&#x8BF4; vim &#x53EA;&#x662F;&#x501F;&#x52A9; terminal &#x7684;&#x900F;&#x660E;&#x5B9E;&#x73B0;&#xFF0C;&#x5176;&#x5B9E; gvim &#x4E4B;&#x7C7B;&#x4E00;&#x6837;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x900F;&#x660E;&#x7684;)&#x5728; emacs &#x4E2D;&#x8BBE;&#x7F6E;&#x900F;&#x660E;&#x5EA6;&#x9996;&#x5148;&#x8981;&#x6FC0;&#x6D3B;&#x900F;&#x660E;&#x5EA6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5148;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A; 92&#xFF05; &#x900F;&#x660E;&#x7684;<pre class="prettyprint"><code class="language-lisp">;;&#x521D;&#x59CB;&#x5316;&#x900F;&#x660E;&#x5EA6;
+(set-frame-parameter (selected-frame) &apos;alpha &apos;(92 92))</code>
+</pre>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5199;&#x4E00;&#x4E2A;&#x4EA4;&#x4E92;&#x51FD;&#x6570;&#x6765;&#x8BBE;&#x7F6E;&#x900F;&#x660E;&#x5EA6;
+(&#x4EA4;&#x4E92;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x7B2C;&#x4E8C;&#x884C;&#x7684; interactive&#xFF0C;&#x51FD;&#x6570;&#x8981;&#x6709;&#x8FD9;&#x4E2A;&#x624D;&#x80FD;&#x88AB; smex &#x6267;&#x884C;&#x5230;)</p>
+<pre class="prettyprint"><code class="language-lisp">;; Set transparency of emacs
+(defun transparency (value)
+  &quot;Sets the transparency of the frame window. 0=transparent/100=opaque&quot;
+  (interactive &quot;nTransparency Value 0 - 100 opaque:&quot;)
+  (set-frame-parameter (selected-frame) &apos;alpha value))</code>
+</pre>
+<h4 id="header-0-5-4"><span class="section-number">0.5.4</span>theme</h4>
+&#x7A0B;&#x5E8F;&#x5458;&#x4E16;&#x754C;&#x597D;&#x770B;&#x7684; theme &#x5C31;&#x90A3;&#x4E48;&#x51E0;&#x4E2A;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x628A; theme &#x811A;&#x672C;&#x7684;&#x76EE;&#x5F55;&#x8BBE;&#x7F6E;&#x597D;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; customisze-theme &#x6765;&#x9009;&#x62E9;&#x4E3B;&#x9898;&#x4E86;&#x3002;(&#x8BB0;&#x5F97;&#x8981;&#x628A; theme &#x52A0;&#x5165; load-path)<pre class="prettyprint"><code class="language-lisp">(setq custom-theme-directory (concat user-emacs-directory &quot;themes&quot;))</code>
+</pre>
+<h4 id="header-0-5-5"><span class="section-number">0.5.5</span>&#x9AD8;&#x4EAE;</h4>
+&#x9AD8;&#x4EAE;&#x5F53;&#x524D;&#x884C;<pre class="prettyprint"><code class="language-lisp">(global-hl-line-mode 1)</code>
+</pre>
+<p>&#x9AD8;&#x4EAE; pair</p>
+<pre class="prettyprint"><code class="language-lisp">(show-paren-mode 1) </code>
+</pre>
+<h3 id="header-0-6"><span class="section-number">0.6</span>&#x57FA;&#x672C;&#x8BBE;&#x7F6E;</h3>
+&#x81EA;&#x52A8;&#x5237;&#x65B0; buffer&#xFF08;&#x5C31;&#x662F;&#x5916;&#x90E8;&#x8BE5;&#x4E86;&#x6587;&#x4EF6;&#x4E4B;&#x540E; buffer &#x4F1A;&#x5237;&#x65B0;&#xFF09;<pre class="prettyprint"><code class="language-lisp">(global-auto-revert-mode 1)</code>
+</pre>
+<p>&#x663E;&#x793A; keystrokes &#x5728; message buffer</p>
+<pre class="prettyprint"><code class="language-lisp">;; Show keystrokes in progress
+(setq echo-keystrokes 0.01)</code>
+</pre>
+<p>&#x5220;&#x9664;&#x6587;&#x4EF6;&#x65F6;&#x5019;&#x628A;&#x6587;&#x4EF6;&#x4E22;&#x8FDB;&#x56DE;&#x6536;&#x7AD9;</p>
+<pre class="prettyprint"><code class="language-lisp">(setq delete-by-moving-to-trash t)</code>
+</pre>
+<p>&#x81EA;&#x52A8;&#x6253;&#x5F00;&#x538B;&#x7F29;&#x6587;&#x4EF6;</p>
+<pre class="prettyprint"><code class="language-lisp">(auto-compression-mode t)</code>
+</pre>
+<p>&#x7F16;&#x7801;&#x8BBE;&#x7F6E;</p>
+<pre class="prettyprint"><code class="language-lisp">(setq locale-coding-system &apos;utf-8) ; pretty
+(set-terminal-coding-system &apos;utf-8) ; pretty
+(set-keyboard-coding-system &apos;utf-8) ; pretty
+(set-selection-coding-system &apos;utf-8) ; please
+(prefer-coding-system &apos;utf-8) ; with sugar on top</code>
+</pre>
+<p>&#x9AD8;&#x4EAE;&#x9009;&#x62E9;&#x533A;&#x57DF;</p>
+<pre class="prettyprint"><code class="language-lisp">(transient-mark-mode 1)
+(make-variable-buffer-local &apos;transient-mark-mode)
+(put &apos;transient-mark-mode &apos;permanent-local t)
+(setq-default transient-mark-mode t)</code>
+</pre>
+<p>&#x9009;&#x62E9;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7C98;&#x8D34;&#x628A;&#x539F;&#x6765;&#x7684;&#x9009;&#x62E9;&#x533A;&#x8986;&#x76D6;</p>
+<pre class="prettyprint"><code class="language-lisp">(delete-selection-mode 1)</code>
+</pre>
+<p>&#x5728; status-bar &#x663E;&#x793A;&#x884C;&#x6570;</p>
+<pre class="prettyprint"><code class="language-lisp">(setq line-number-mode t)
+(setq column-number-mode t)</code>
+</pre>
+<p>&#x81EA;&#x52A8;&#x628A; tab &#x8F6C;&#x6210;&#x7A7A;&#x683C;</p>
+<pre class="prettyprint"><code class="language-lisp">(set-default &apos;indent-tabs-mode nil)</code>
+</pre>
+<p>&#x8BBE;&#x7F6E;&#x65AD;&#x884C;&#x663E;&#x793A;</p>
+<pre class="prettyprint"><code class="language-lisp">(setq-default truncate-lines t)</code>
+</pre>
+<p>&#x4FDD;&#x5B58; session &#x72B6;&#x6001;</p>
+<pre class="prettyprint"><code class="language-lisp">(require &apos;saveplace)
+(setq-default save-place t)
+(setq save-place-file (expand-file-name &quot;.places&quot; user-emacs-directory))</code>
+</pre>
+<p>&#x4FDD;&#x5B58; undo list</p>
+<pre class="prettyprint"><code class="language-lisp">(add-to-list &apos;desktop-locals-to-save &apos;buffer-undo-list)</code>
+</pre>
+<p>&#x2026;&#x2026;&#x672A;&#x5B8C;&#x5F85;&#x7EED;</p>
+
+
+        
+      </div>
+      
+      <div class="footer-avator">
+
+    <div class="hr"></div>
+    
+    <img alt="" src="/static/img/me.jpg"/>
+
+    <p class="footer-avator--author">陳放為</p>
+    <p class="footer-avator--author-desc">一个码农 </p>
+    
+</div>
+
+      
+      <footer class="footer-article">
+
+    <div class="hr"></div>
+    
+    <div class="footer-text">
+        <p>陳放為的博客 All rights reserved.</p>
+        <ul class="footer-icons">
+            
+            <li>
+                <a href="https://github.com/AbyChan/" target="_blank">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M512 0c-282.75 0-512 229.25-512 512 0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312-142.375 30.937-172.469-60.375-172.469-60.375-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375-113.656-12.937-233.218-56.875-233.218-253.063 0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562 203.313-67.812 349.875-259.687 349.875-485.812 0-282.75-229.25-512-512-512z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM256 256h512c9.138 0 18.004 1.962 26.144 5.662l-282.144 329.168-282.144-329.17c8.14-3.696 17.006-5.66 26.144-5.66zM192 704v-384c0-1.34 0.056-2.672 0.14-4l187.664 218.942-185.598 185.598c-1.444-5.336-2.206-10.886-2.206-16.54zM768 768h-512c-5.654 0-11.202-0.762-16.54-2.208l182.118-182.118 90.422 105.498 90.424-105.494 182.116 182.12c-5.34 1.44-10.886 2.202-16.54 2.202zM832 704c0 5.654-0.762 11.2-2.206 16.54l-185.6-185.598 187.666-218.942c0.084 1.328 0.14 2.66 0.14 4v384z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path class="path1" d="M928 0h-832c-52.8 0-96 43.2-96 96v832c0 52.8 43.2 96 96 96h832c52.8 0 96-43.2 96-96v-832c0-52.8-43.2-96-96-96zM279 831.2c-48 0-87-38.6-87-86.6 0-47.6 39-86.8 87-86.8 48.2 0 87 39.2 87 86.8 0 48-39 86.6-87 86.6zM497.4 832c0-81.8-31.8-158.8-89.4-216.4-57.8-57.8-134.4-89.6-216-89.6v-125.2c237.6 0 431.2 193.4 431.2 431.2h-125.8zM719.6 832c0-291-236.6-528-527.4-528v-125.2c360 0 653 293.2 653 653.2h-125.6z"></path>
+                    </svg>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</footer>
+
+    </div>
+    
+
+
+    <script src="/static/js/article.bundle.js"></script>
+    <script src="/static/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

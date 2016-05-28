@@ -1,0 +1,230 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>JAVASCRIPT 函数式实现我文字蛇动</title>
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+    
+    
+    <link rel="stylesheet" href="/static/css/lib/normalize.css">
+    <link rel="stylesheet" href="/static/css/hl-styles/monokai-sublime.css">
+    <link rel="stylesheet" href="/static/css/article.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+  </head>
+
+
+  <body>
+
+    <div class="slide-tag  slide-tag-article ">
+  <div class="toggle-button">
+    <a href="javascript:;" class="slide-button"><i class="fa fa-bars" aria-hidden="true"></i></a>
+  </div>
+  
+  <ul>
+    
+    <li class="index" title="首页">
+      <a href="/" class="slide-button"><i class="fa fa-home" aria-hidden="true"></i></a><span>首页</span>
+    </li>
+    
+    <li title="所有文章">
+      <a href="/page/1/index.html" class="slide-button"><i class="fa fa-list-alt" aria-hidden="true"></i></a><span>所有文章</span>
+    </li>
+    <li title="目录">
+      <a href="/category/index.html" class="slide-button"><i class="fa fa-list-ol" aria-hidden="true"></i></a><span>目录</span>
+    </li>
+    
+      <li title="上一级">
+        <a href="./index.html" class="slide-button"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a><span>上一级</span>
+      </li>
+    
+    <li title="关于我">
+      <a href="http://cfw.io" class="slide-button"><i class="fa fa-user" aria-hidden="true"></i></a><span>关于我</span>
+    </li>
+  </ul>
+</div>
+
+
+    <div class="main">
+      
+      
+      <div class="article org">
+        <h1 class="title">JAVASCRIPT 函数式实现我文字蛇动</h1>
+        <span class="show-time">2016年4月24日 上午7:54</span>
+        <br/>
+        <br/>
+        <div class="hr"></div>
+        
+        <ul><li><a href="#header-"><span class="section-number"></span></a><ul><li><a href="#header-0-1"><span class="section-number">0.1</span>es6 &#x4EE3;&#x7801;</a></li>
+<li><a href="#header-0-2"><span class="section-number">0.2</span>curry</a></li>
+<li><a href="#header-0-3"><span class="section-number">0.3</span>compose</a></li>
+<li><a href="#header-0-4"><span class="section-number">0.4</span>lodash vs ramda</a></li>
+<li><a href="#header-0-5"><span class="section-number">0.5</span>&#x611F;&#x609F;</a></li>
+</ul>
+</li>
+</ul>
+<p>&#x4E4B;&#x524D;&#x4E00;&#x76F4;&#x5BF9;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x611F;&#x5174;&#x8DA3;&#xFF0C;&#x6700;&#x8FD1;&#x518D;&#x4E00;&#x6B21;&#x7814;&#x7A76;&#x4E86;&#x4E00;&#x4E0B; javascript &#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x5E94;&#x7528;&#xFF0C;&#x4F3C;&#x4E4E;&#x53C8;&#x6709;&#x4E86;&#x65B0;&#x7684;&#x611F;&#x609F;&#x3002;
+&#x4E4B;&#x524D;&#x8BA4;&#x4E3A;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x9762;&#x5BF9;&#x6570;&#x636E;&#x6D41;&#xFF0C;&#x6570;&#x636E;&#x4ECE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8FDB;&#x53BB;&#xFF0C;&#x7ECF;&#x8FC7;&#x4E00;&#x4E2A;&#x4E2A;&#x51FD;&#x6570;&#x201C;&#x7BA1;&#x5B50;&#x201D;&#xFF0C;&#x8F93;&#x51FA;&#x53E6;&#x4E00;&#x5806;&#x6570;&#x636E;&#xFF0C;&#x6254;&#x8FDB;&#x53BB;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x518D;&#x6267;&#x884C;&#x3002;
+&#x597D;&#x50CF;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF0C;&#x53C8;&#x4E0D;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF0C;&#x9042;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x5C0F; demo&#xFF0C;&#x8BF7;&#x770B;&#x4E0B;&#x9762;&#x3002;</p>
+
+<div id="demo" style="padding: 1rem; border: 1px solid #999;">
+<span>hover me: &#x2193;&#x2193;&#x2193;&#x2193;&#x2193;&#x2193;</span>
+<p style="color: #439f91; cursor: point;">JAVASCRIPT FUNCTIONAL</p>
+</div>
+<script src="/Js/functional-snake-text/txtShakeDemo.bundle.js"></script>
+
+<h3 id="header-0-1"><span class="section-number">0.1</span>es6 &#x4EE3;&#x7801;</h3>
+<pre class="prettyprint"><code class="language-javascript">&apos;use strict&apos;;
+
+let $ = require(&apos;jquery&apos;),
+    _ = require(&apos;lodash&apos;),
+    R = require(&apos;ramda&apos;);
+
+
+
+let getTxt = (dom) =&gt; {
+    return dom.innerHTML;
+};
+
+let isUpper = (char) =&gt; {
+    return char === char.toUpperCase();
+};
+
+let shake = _.curry((txt, i) =&gt; {
+    let chars = txt.split(&apos;&apos;);
+    let cf = isUpper(chars[i]) ?
+        String.prototype.toLowerCase : String.prototype.toUpperCase;
+    chars[i] = cf.apply(chars[i]);
+    return chars.join(&apos;&apos;);
+});
+
+let setTxt = _.curry((dom, txt) =&gt; {
+    dom.innerHTML = txt;
+});
+
+
+let txtSnake = (dom, interal) =&gt; {
+    let txt = getTxt(dom),
+        len = txt.length;
+
+    let shakeTxt = shake(txt),
+        setDomTxt = setTxt(dom);
+    
+    let setShake = R.compose(setDomTxt, shakeTxt);
+    
+    let i = 0;
+    let timer = setInterval(() =&gt; {
+        let ii = (i++) % len;
+        setShake(ii);
+    }, interal);
+    
+    return () =&gt; {
+        if( timer ){
+            setDomTxt(txt);
+            clearInterval(timer);
+        }
+    };
+};
+
+export {txtSnake};</code>
+</pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x7528;&#x4E86; curry &#x548C; compose&#xFF0C;curry &#x5B9E;&#x5728;&#x662F;&#x633A;&#x597D;&#x7528;&#xFF0C;&#x4F7F;&#x5F97;&#x51FD;&#x6570;&#x751F;&#x6210;&#x51FD;&#x6570;&#x66F4;&#x65B9;&#x4FBF;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x65B9;&#x9762;&#x51FD;&#x6570;&#x7F13;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x4F7F;&#x5F97;&#x4EE3;&#x7801;&#x66F4;&#x4E3A;&#x9AD8;&#x6548;&#xFF0C;&#x4E5F;&#x66F4;&#x4FBF;&#x4E8E;&#x9605;&#x8BFB;&#x3002;</p>
+<h3 id="header-0-2"><span class="section-number">0.2</span>curry</h3>
+&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x8FD9;&#x6837;:<pre class="prettyprint"><code class="language-javscript">var add = function(x) {
+  return function(y) {
+    return x + y;
+  };
+};
+
+var increment = add(1);
+var addTen = add(10);
+
+increment(2);
+// 3
+
+addTen(2);
+// 12</code>
+</pre>
+&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x751F;&#x6210;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x8FD9;&#x7C7B;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x8C03;&#x7528;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x3002;<h3 id="header-0-3"><span class="section-number">0.3</span>compose</h3>
+&#x800C;&#x7EC4;&#x5408;&#x66F4;&#x52A0;&#x597D;&#x73A9;&#x4E86;&#xFF0C; &#x901A;&#x8FC7;&#x7EC4;&#x5408;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97; f g &#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x7EC4;&#x5408;&#x6210;&#x7BA1;&#x9053;<pre class="prettyprint"><code class="language-javascript">var compose = function(f,g) {
+  return function(x) {
+    return f(g(x));
+  };
+};</code>
+</pre>
+<p>&#x4E00;&#x4E2A;&#x5C0F;&#x5C0F;&#x7684;&#x4F8B;&#x5B50;</p>
+<pre class="prettyprint"><code class="language-javascript">var toUpperCase = function(x) { return x.toUpperCase(); };
+var exclaim = function(x) { return x + &apos;!&apos;; };
+var shout = compose(exclaim, toUpperCase);</code>
+</pre>
+<h3 id="header-0-4"><span class="section-number">0.4</span>lodash vs ramda</h3>
+&#x4E0A;&#x9762;&#x6211; require &#x4E86;&#x4E24;&#x4E2A;&#x5E93;&#xFF0C;lodash &#x548C; ramada&#xFF0C; &#x5176;&#x5B9E;&#x6211;&#x4E4B;&#x524D;&#x662F;&#x76F4;&#x63A5;&#x7528; lodash &#x7684;&#xFF0C;lodash &#x540D;&#x6C14;&#x4E5F;&#x5927;&#x4E00;&#x4E9B;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x540E;&#x6765;&#x6362;&#x4E86;&#x4E00;&#x53F0;&#x7535;&#x8111;&#x8DD1;&#xFF0C;&#x53D1;&#x73B0; lodash &#x6709;&#x4E9B;&#x51FD;&#x6570;&#x4E0D;&#x5168;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x4EC0;&#x4E48;&#x56DE;&#x4E8B;&#xFF0C;&#x4E8E;&#x662F;&#x5C31;&#x6362;&#x4E86;&#x4E2A; ramda &#x7528; compose&#xFF0C;&#x6D4F;&#x89C8;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x53D1;&#x73B0; ramda &#x66F4;&#x597D;&#xFF0C;&#x66F4;&#x597D;&#x6269;&#x5C55;&#xFF0C;&#x6211;&#x81EA;&#x5DF1;&#x4E5F; fork &#x4E86;&#x4E00;&#x4EFD;&#x4F20;&#x5230; npm &#x4E86;&#xFF0C;&#x53EB;&#x505A; fw-ramda&#xFF0C;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E9B;&#x6211;&#x5E38;&#x7528;&#x7684;&#x51FD;&#x6570;&#x3002;<p>&#x6700;&#x540E;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x53D6;&#x6D88;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x79CD;&#x89C4;&#x8303;&#x5427;&#xFF0C;&#x636E;&#x6211;&#x6240;&#x77E5;&#x662F;&#x4ECE; angular &#x6D41;&#x884C;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x6CE8;&#x518C;&#x4E86; snake &#x6548;&#x679C;&#x8FD4;&#x56DE;&#x53D6;&#x6D88;&#x51FD;&#x6570;&#xFF0C;&#x6574;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#x5F97;&#x5230;&#x9694;&#x79BB;&#xFF0C;&#x91CD;&#x7528;&#x548C;&#x7EF4;&#x62A4;&#x6027;&#x90FD;&#x5F88;&#x597D;&#x3002;
+</p>
+<h3 id="header-0-5"><span class="section-number">0.5</span>&#x611F;&#x609F;</h3>
+&#x5176;&#x5B9E;&#x6211;&#x89C9;&#x5F97;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x6700;&#x5927;&#x7279;&#x6027;&#x5C31;&#x662F;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x63CF;&#x8FF0;&#x6027;&#xFF0C;&#x5199;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x662F;&#x63CF;&#x8FF0;&#x6027;&#xFF0C;&#x5728;&#x4E3B;&#x4F53;&#x4EE3;&#x7801;&#x91CC;&#x9762;,&#x7528;&#x7684;&#x90FD;&#x662F;&#x63CF;&#x8FF0;&#x6027;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x505A;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x600E;&#x4E48;&#x5199;&#xFF0C;&#x7528;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x81EA;&#x9876;&#x5411;&#x4E0B;&#x5199;&#x7A0B;&#x5E8F;&#xFF0C;&#x628A;&#x57FA;&#x7840;&#x4EE3;&#x7801;&#x5206;&#x6563;&#x51FA;&#x6765;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x5F97;&#x5199;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x4F1A;&#x5199;&#x7740;&#x5199;&#x7740;&#x5C31;&#x597D;&#x50CF;&#x5FD8;&#x4E86;&#x7A76;&#x7ADF;&#x8981;&#x5199;&#x4EC0;&#x4E48;&#xFF08;&#x8FD9;&#x5728;&#x5199;&#x590D;&#x6742;&#x7A0B;&#x5E8F;&#x7A0B;&#x5E8F;&#x91CC;&#x9762;&#x5341;&#x5206;&#x5E38;&#x89C1;&#xFF09;&#x3002;<p>&#x4E0D;&#x8FC7;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x603B;&#x662F;&#x5F3A;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x7EAF;&#x6027;&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7EAF;&#x7684;&#xFF0C;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x523B;&#x610F;&#x5FFD;&#x89C6;&#x7A0B;&#x5E8F;&#x7684;&#x72B6;&#x6001;&#x6027;&#x548C;&#x52A8;&#x4F5C;&#xFF0C;&#x4E00;&#x65E6;&#x6D89;&#x53CA;&#x72B6;&#x6001;&#x548C;&#x52A8;&#x4F5C;&#x5C31;&#x60F3;&#x65B9;&#x8BBE;&#x6CD5;&#x56DE;&#x907F;&#xFF0C;&#x8981;&#x7528;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x624B;&#x6BB5;&#x624D;&#x80FD;&#x628A;&#x72B6;&#x6001;&#x548C;&#x52A8;&#x4F5C;&#x7EAF;&#x5316;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x975E;&#x5E38;&#x9EBB;&#x70E6;&#x7684;&#x5730;&#x65B9;&#x3002;</p>
+<p>&#x51FD;&#x6570;&#x5F0F;&#xFF0C;&#x9762;&#x5BF9;&#x5BF9;&#x8C61;&#xFF0C;&#x4E43;&#x81F3;&#x6307;&#x4EE4;&#x5F0F;&#xFF0C;&#x6211;&#x89C9;&#x5F97; 3 &#x8005;&#x90FD;&#x4E0D;&#x662F;&#x4E92;&#x65A5;&#x7684;&#x5B58;&#x5728;&#xFF0C;3 &#x8005;&#x80FD;&#x53CB;&#x597D;&#x5171;&#x5B58;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x65B0;&#x751F;&#x4EE3;&#x7684;&#x8BED;&#x8A00;&#x5927;&#x591A;&#x662F;&#x591A;&#x8303;&#x5F0F;&#x8BED;&#x8A00;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#x9762;&#x5BF9;&#x5BF9;&#x8C61;&#x65B9;&#x4FBF;&#xFF0C;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#x51FD;&#x6570;&#x5F0F;&#x80FD;&#x505A;&#x5F97;&#x66F4;&#x7F8E;&#x597D;&#xFF0C;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#x6307;&#x4EE4;&#x66F4;&#x4E3A;&#x9AD8;&#x6548;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x5728;&#x5199; canvas &#x6548;&#x679C;&#x7684;&#x65F6;&#x5019;&#x5927;&#x591A;&#x6570;&#x4F7F;&#x7528;&#x9762;&#x5BF9;&#x5BF9;&#x8C61;&#xFF0C;&#x5341;&#x5206;&#x65B9;&#x4FBF;&#xFF0C;&#x6211;&#x4E5F;&#x60F3;&#x4E0D;&#x5230;&#x5982;&#x679C;&#x7528;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x5199;&#x3002;&#x5E73;&#x65F6;&#x5199;&#x811A;&#x672C;&#x7684;&#x65F6;&#x5019;&#x5F53;&#x7136;&#x662F;&#x7EAF;&#x7CB9;&#x7684;&#x6307;&#x4EE4;&#x7F16;&#x7A0B;&#x6765;&#x7684;&#x5FEB;&#x548C;&#x9AD8;&#x6548;&#x3002;</p>
+
+
+        
+      </div>
+      
+      <div class="footer-avator">
+
+    <div class="hr"></div>
+    
+    <img alt="" src="/static/img/me.jpg"/>
+
+    <p class="footer-avator--author">陳放為</p>
+    <p class="footer-avator--author-desc">一个码农 </p>
+    
+</div>
+
+      
+      <footer class="footer-article">
+
+    <div class="hr"></div>
+    
+    <div class="footer-text">
+        <p>陳放為的博客 All rights reserved.</p>
+        <ul class="footer-icons">
+            
+            <li>
+                <a href="https://github.com/AbyChan/" target="_blank">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M512 0c-282.75 0-512 229.25-512 512 0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312-142.375 30.937-172.469-60.375-172.469-60.375-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375-113.656-12.937-233.218-56.875-233.218-253.063 0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562 203.313-67.812 349.875-259.687 349.875-485.812 0-282.75-229.25-512-512-512z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM256 256h512c9.138 0 18.004 1.962 26.144 5.662l-282.144 329.168-282.144-329.17c8.14-3.696 17.006-5.66 26.144-5.66zM192 704v-384c0-1.34 0.056-2.672 0.14-4l187.664 218.942-185.598 185.598c-1.444-5.336-2.206-10.886-2.206-16.54zM768 768h-512c-5.654 0-11.202-0.762-16.54-2.208l182.118-182.118 90.422 105.498 90.424-105.494 182.116 182.12c-5.34 1.44-10.886 2.202-16.54 2.202zM832 704c0 5.654-0.762 11.2-2.206 16.54l-185.6-185.598 187.666-218.942c0.084 1.328 0.14 2.66 0.14 4v384z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path class="path1" d="M928 0h-832c-52.8 0-96 43.2-96 96v832c0 52.8 43.2 96 96 96h832c52.8 0 96-43.2 96-96v-832c0-52.8-43.2-96-96-96zM279 831.2c-48 0-87-38.6-87-86.6 0-47.6 39-86.8 87-86.8 48.2 0 87 39.2 87 86.8 0 48-39 86.6-87 86.6zM497.4 832c0-81.8-31.8-158.8-89.4-216.4-57.8-57.8-134.4-89.6-216-89.6v-125.2c237.6 0 431.2 193.4 431.2 431.2h-125.8zM719.6 832c0-291-236.6-528-527.4-528v-125.2c360 0 653 293.2 653 653.2h-125.6z"></path>
+                    </svg>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</footer>
+
+    </div>
+    
+
+
+    <script src="/static/js/article.bundle.js"></script>
+    <script src="/static/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

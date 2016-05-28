@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>我的 Emacs 之道</title>
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+    
+    
+    <link rel="stylesheet" href="/static/css/lib/normalize.css">
+    <link rel="stylesheet" href="/static/css/hl-styles/monokai-sublime.css">
+    <link rel="stylesheet" href="/static/css/article.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+  </head>
+
+
+  <body>
+
+    <div class="slide-tag  slide-tag-article ">
+  <div class="toggle-button">
+    <a href="javascript:;" class="slide-button"><i class="fa fa-bars" aria-hidden="true"></i></a>
+  </div>
+  
+  <ul>
+    
+    <li class="index" title="首页">
+      <a href="/" class="slide-button"><i class="fa fa-home" aria-hidden="true"></i></a><span>首页</span>
+    </li>
+    
+    <li title="所有文章">
+      <a href="/page/1/index.html" class="slide-button"><i class="fa fa-list-alt" aria-hidden="true"></i></a><span>所有文章</span>
+    </li>
+    <li title="目录">
+      <a href="/category/index.html" class="slide-button"><i class="fa fa-list-ol" aria-hidden="true"></i></a><span>目录</span>
+    </li>
+    
+      <li title="上一级">
+        <a href="./index.html" class="slide-button"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a><span>上一级</span>
+      </li>
+    
+    <li title="关于我">
+      <a href="http://cfw.io" class="slide-button"><i class="fa fa-user" aria-hidden="true"></i></a><span>关于我</span>
+    </li>
+  </ul>
+</div>
+
+
+    <div class="main">
+      
+      
+      <div class="article org">
+        <h1 class="title">我的 Emacs 之道</h1>
+        <span class="show-time">2016年3月14日 下午1:18</span>
+        <br/>
+        <br/>
+        <div class="hr"></div>
+        
+        <ul><li><a href="#header-1"><span class="section-number">1</span>&#x4E0A;&#x624B;&#x914D;&#x7F6E;</a><ul><li><a href="#header-1-1"><span class="section-number">1.1</span>&#x81EA;&#x5DF1;&#x914D;&#x7F6E; emacs.d</a></li>
+<li><a href="#header-1-2"><span class="section-number">1.2</span>&#x5927;&#x795E;&#x7EA7;&#x522B;&#x914D;&#x7F6E;</a></li>
+</ul>
+</li>
+<li><a href="#header-2"><span class="section-number">2</span>&#x6211;&#x4E00;&#x4E9B; emacs &#x9879;&#x76EE;</a><ul><li><a href="#header-2-1"><span class="section-number">2.1</span>emacs phoenix &#x5F00;&#x7BB1;&#x914D;&#x7F6E; </a></li>
+</ul>
+</li>
+<li><a href="#header-3"><span class="section-number">3</span>&#x53E6;</a></li>
+</ul>
+<p>&#x4ECE;&#x5927;&#x5B66;&#x5F00;&#x59CB;&#x5C31;&#x5F00;&#x59CB;&#x4F7F;&#x7528; Emacs &#x4E86;,&#x5230;&#x73B0;&#x5728;&#x591A;&#x591A;&#x5C11;&#x5C11;&#x6709;&#x70B9;&#x624B;&#x611F;&#x4E86;&#xFF0C;&#x5206;&#x4EAB;&#x4E00;&#x4E9B;&#x81EA;&#x5DF1;&#x5B66;&#x4E60; emacs &#x7684;&#x7ECF;&#x9A8C;&#x3002;</p>
+<h2 id="header-1"><span class="section-number">1</span>&#x4E0A;&#x624B;&#x914D;&#x7F6E;</h2>
+<p>&#x81EA;&#x5DF1;&#x5F00;&#x53D1;&#x90FD;&#x662F;&#x5728; linux &#x4E0B;&#x6216;&#x8005; Mac &#x4E0B;&#x7684;&#xFF0C;&#x6240;&#x4EE5; Windows &#x7684;&#x914D;&#x7F6E;&#x4E0D;&#x6E05;&#x9664;&#xFF0C;&#x5370;&#x8C61;&#x4E2D;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; babun &#x8C03;&#x7528; emacs-w32 &#x6765;&#x542F;&#x52A8; emacs &#x7684;&#xFF0C;&#x4F46;&#x662F;&#x6700;&#x597D;&#x8FD8;&#x662F;&#x5EFA;&#x8BAE;&#x5728; linux &#x548C; Mac &#x4E0B;&#x6298;&#x817E;</p>
+<p>2&#x9664;&#x4E86; eval &#x548C; spacemas &#x7B49; vim &#x515A;,emacs &#x5165;&#x95E8;&#x4E00;&#x822C;&#x5206;&#x4E3A;&#x4FE9;&#x79CD;,&#x4E00;&#x79CD;&#x662F;&#x4E00;&#x5F00;&#x59CB;&#x76F4;&#x63A5;&#x7528;&#x9AD8;&#x624B;&#x7684;&#x914D;&#x7F6E;; &#x53E6;&#x4E00;&#x79CD;&#x662F;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x914D;&#x7F6E;&#x3002;</p>
+<h3 id="header-1-1"><span class="section-number">1.1</span>&#x81EA;&#x5DF1;&#x914D;&#x7F6E; emacs.d</h3>
+<p>&#x4E00;&#x4E0A;&#x6765;&#x5C31;&#x624B;&#x5DE5;&#x914D;&#x7F6E; emacs &#x96BE;&#x514D;&#x6709;&#x70B9;&#x96BE;&#x5EA6;&#xFF0C;&#x800C;&#x4E14;&#x5BB9;&#x6613;&#x4EE4;&#x4EBA;&#x6253;&#x9000;&#x5802;&#x9F13;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x8981;&#x5148;&#x5B66;&#x4E60; elisp&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x6CA1;&#x6709; lisp &#x7684;&#x4EBA;&#x6765;&#x8BF4;&#x5B66;&#x4E60;&#x66F2;&#x7EBF;&#x4F1A;&#x5341;&#x5206;&#x9661;&#x5CED;&#xFF0C;&#x4E0D;&#x662F;&#x4E00;&#x822C;&#x4EBA;&#x80FD;&#x53D7;&#x5F97;&#x4E86;&#x7684;&#xFF0C;&#x867D;&#x7136;&#x8BF4;&#x8FD9;&#x6837;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x8FD8;&#x662F;&#x6709;&#x70B9;&#x5EFA;&#x8BAE;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x5C31;&#x662F;&#x8981;&#x57FA;&#x672C;&#x7684;&#x914D;&#x7F6E;&#x6539;&#x4E00;&#x4E0B;&#xFF0C;&#x56E0;&#x4E3A; emacs &#x51FA;&#x751F;&#x7684;&#x5E74;&#x4EE3;&#x5B9E;&#x5728;&#x662F;&#x6BD4;&#x8F83;&#x4E45;&#x8FDC;&#xFF0C;&#x4E00;&#x4E9B;&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;&#x4F1A;&#x8BA9; 21 &#x4E16;&#x7EAA;&#x7684;&#x6211;&#x4EEC;&#x65E0;&#x6240;&#x9002;&#x4ECE;&#x3002;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x4E5F;&#x6709;&#x8BF4;&#x5230;&#xFF1A;
+<a href="https://github.com/technomancy/better-defaults"><a href="https://github.com/technomancy/better-defaults">https://github.com/technomancy/better-defaults</a></a></p>
+<p>&#x628A;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x7684;&#x4E1C;&#x897F;&#x6362;&#x6389;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x5B66;&#x4E60; emacs&#xFF0C;&#x5C3D;&#x7BA1;&#x4F60;&#x4F1A;&#x89C9;&#x5F97; emacs &#x4E00;&#x6253;&#x5F00;&#x7684;&#x754C;&#x9762;&#x5F88;&#x96BE;&#x770B;&#xFF0C;&#x4F46;&#x662F;&#x76F8;&#x4FE1;&#x6211;&#xFF0C;&#x7ECF;&#x8FC7;&#x4F60;&#x7684;&#x914D;&#x7F6E;&#x4E00;&#x5B9A;&#x4F1A;&#x53D8;&#x5F97;&#x5F88;&#x597D;&#x770B;&#x7684;</p>
+<p>&#x53E6;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x662F; mac &#x7528;&#x6237;&#xFF0C;&#x90A3;&#x53EF;&#x80FD;&#x4F60;&#x8981;&#x66FF;&#x6362;&#x4E00;&#x4E0B; alt &#x548C; command &#x7684;&#x4F4D;&#x7F6E;&#xFF0C;alt &#x5728; emacs &#x7684;&#x4E16;&#x754C;&#x91CC;&#x9762;&#x88AB;&#x79F0;&#x4F5C; M, command &#x76F8;&#x5F53;&#x4E8E; windows &#x91CC;&#x9762;&#x7684; win &#x952E;&#xFF0C;&#x88AB;&#x6210;&#x4E3A; s&#xFF0C;control &#x952E;&#x5219;&#x662F; C&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x628A; M &#x548C; s &#x952E;&#x7684;&#x4F4D;&#x7F6E;&#x66FF;&#x6362;&#x4E00;&#x4E0B;&#xFF0C;&#x968F;&#x4FBF;&#x628A; fn &#x5F53;&#x4F5C; H &#x952E;&#x6765;&#x7528;&#x7528;&#xFF1A;</p>
+<pre class="prettyprint"><code class="language-lisp">(setq mac-option-modifier &apos;super)
+(setq mac-command-modifier &apos;meta)
+(setq ns-function-modifier &apos;hyper)</code>
+</pre>
+<h3 id="header-1-2"><span class="section-number">1.2</span>&#x5927;&#x795E;&#x7EA7;&#x522B;&#x914D;&#x7F6E;</h3>
+&#x5176;&#x5B9E;&#x6211;&#x662F;&#x5EFA;&#x8BAE;&#x4E00;&#x4E0A;&#x6765;&#x5C31;&#x7528;&#x5927;&#x795E;&#x7EA7;&#x522B;&#x7684;&#x914D;&#x7F6E;&#x7684;&#xFF0C;&#x6211;&#x4E00;&#x5F00;&#x59CB;&#x4E5F;&#x662F;&#x7528;&#x5927;&#x795E;&#x7684;&#x914D;&#x7F6E;&#x7684;&#xFF0C;github &#x4E0A;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x4E0D;&#x8FC7;&#x6211;&#x6700;&#x559C;&#x6B22;&#x7684;&#x8FD8;&#x662F; emacs rockemacs-rocks &#x4F5C;&#x8005;&#x7684;&#x914D;&#x7F6E; <a href="https://github.com/magnars/.emacs.d"><a href="https://github.com/magnars/.emacs.d">https://github.com/magnars/.emacs.d</a></a><p><a href="https://github.com/magnars/.emacs.d"><a href="https://github.com/magnars/.emacs.d">https://github.com/magnars/.emacs.d</a></a> </p>
+<p>&#x4E4B;&#x524D;&#x6211;&#x5C31;&#x662F;&#x5B66;&#x4E60;&#x4ED6;&#x7684;&#x914D;&#x7F6E;&#x81EA;&#x5DF1;&#x6539;&#x4E86;&#x4E00;&#x5957;&#xFF0C;&#x4E0D;&#x8FC7;&#x8FD9;&#x4E2A;&#x6211;&#x5DF2;&#x7ECF;&#x4E0D;&#x7528;&#x5F88;&#x4E45;&#x4E86;&#xFF0C;&#x4E4B;&#x540E;&#x81EA;&#x5DF1;&#x91CD;&#x65B0;&#x64B8;&#x4E86;&#x4E00;&#x5957; </p>
+<p><a href="https://github.com/AbyChan/Emacs.d">https://github.com/AbyChan/Emacs.d</a></p>
+<h2 id="header-2"><span class="section-number">2</span>&#x6211;&#x4E00;&#x4E9B; emacs &#x9879;&#x76EE;</h2>
+<a href="https://github.com/Emacs-Phoenix"><a href="https://github.com/Emacs-Phoenix">https://github.com/Emacs-Phoenix</a></a><h3 id="header-2-1"><span class="section-number">2.1</span>emacs phoenix &#x5F00;&#x7BB1;&#x914D;&#x7F6E; </h3>
+<h2 id="header-3"><span class="section-number">3</span>&#x53E6;</h2>
+&#x6CE8;&#xFF1A;Emacs &#x7684;&#x6807;&#x5FD7;&#x662F;&#x4E0D;&#x662F;&#x4E00;&#x5934;&#x725B;&#xFF0C;&#x5B66;&#x540D;&#x53EB;&#x975E;&#x6D32;&#x89D2;&#x9A6C;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x7F9A;&#x7F8A;&#x3002;
+
+        
+      </div>
+      
+      <div class="footer-avator">
+
+    <div class="hr"></div>
+    
+    <img alt="" src="/static/img/me.jpg"/>
+
+    <p class="footer-avator--author">陳放為</p>
+    <p class="footer-avator--author-desc">一个码农 </p>
+    
+</div>
+
+      
+      <footer class="footer-article">
+
+    <div class="hr"></div>
+    
+    <div class="footer-text">
+        <p>陳放為的博客 All rights reserved.</p>
+        <ul class="footer-icons">
+            
+            <li>
+                <a href="https://github.com/AbyChan/" target="_blank">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M512 0c-282.75 0-512 229.25-512 512 0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312-142.375 30.937-172.469-60.375-172.469-60.375-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375-113.656-12.937-233.218-56.875-233.218-253.063 0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562 203.313-67.812 349.875-259.687 349.875-485.812 0-282.75-229.25-512-512-512z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM256 256h512c9.138 0 18.004 1.962 26.144 5.662l-282.144 329.168-282.144-329.17c8.14-3.696 17.006-5.66 26.144-5.66zM192 704v-384c0-1.34 0.056-2.672 0.14-4l187.664 218.942-185.598 185.598c-1.444-5.336-2.206-10.886-2.206-16.54zM768 768h-512c-5.654 0-11.202-0.762-16.54-2.208l182.118-182.118 90.422 105.498 90.424-105.494 182.116 182.12c-5.34 1.44-10.886 2.202-16.54 2.202zM832 704c0 5.654-0.762 11.2-2.206 16.54l-185.6-185.598 187.666-218.942c0.084 1.328 0.14 2.66 0.14 4v384z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path class="path1" d="M928 0h-832c-52.8 0-96 43.2-96 96v832c0 52.8 43.2 96 96 96h832c52.8 0 96-43.2 96-96v-832c0-52.8-43.2-96-96-96zM279 831.2c-48 0-87-38.6-87-86.6 0-47.6 39-86.8 87-86.8 48.2 0 87 39.2 87 86.8 0 48-39 86.6-87 86.6zM497.4 832c0-81.8-31.8-158.8-89.4-216.4-57.8-57.8-134.4-89.6-216-89.6v-125.2c237.6 0 431.2 193.4 431.2 431.2h-125.8zM719.6 832c0-291-236.6-528-527.4-528v-125.2c360 0 653 293.2 653 653.2h-125.6z"></path>
+                    </svg>
+                </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</footer>
+
+    </div>
+    
+
+
+    <script src="/static/js/article.bundle.js"></script>
+    <script src="/static/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
